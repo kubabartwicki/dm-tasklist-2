@@ -1,0 +1,609 @@
+// Path to assets for use with the file-url function
+// in the govuk frontend toolkit's url-helpers partial
+$path: "/public/images/";
+
+// Import GOV.UK elements from /govuk-modules/, this will import the frontend toolkit and some base styles.
+// Take a look in /govuk-modules/_govuk-elements.scss to see which files are imported.
+@import 'govuk-elements';
+
+// Take a look at in app/assets/sass/patterns/ to see which files are imported.
+@import 'patterns/check-your-answers';
+@import 'patterns/task-list';
+
+// Related items
+// (These styles will be moved to GOV.UK elements, duplicating here for now.)
+.govuk-related-items {
+  margin-top: $gutter;
+  border-top: 10px solid $govuk-blue;
+  padding-top: 5px;
+
+  .heading-medium {
+    margin-top: 0.3em;
+    margin-bottom: 0.5em;
+  }
+
+  li {
+    margin-bottom: 10px;
+    list-style-type: none;
+  }
+}
+
+// Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+#global-breadcrumb {
+  background-color: #fff;
+  max-width: 1020px;
+  margin: 0 auto;
+  z-index: 50;
+  nav ol {
+      max-width: 960px;
+      margin: 0 15px;
+      padding: 0.75em 0;
+  }
+  nav ol li {
+    font-family: "nta",Arial,sans-serif;
+    font-weight: 400;
+    text-transform: none;
+    font-size: 14px;
+    line-height: 1.14286;
+    background: url(/public/images/separator.png) 0% 50% no-repeat;
+    float: left;
+    list-style: none;
+    margin-right: 0.5em;
+    padding-left: 15px;
+    &:first-child {
+      background-image: none;
+      padding-left: 0;
+    }
+  }
+  nav ol li a {
+    color: #0b0c0c;
+  }
+}
+#global-header.with-proposition .header-wrapper {
+  .header-global .header-title {
+    float: left;
+    font-family: "nta",Arial,sans-serif;
+    font-weight: normal;
+    padding-top: 7px;
+    font-size: 24px;
+  }
+  .header-global .header-title a {
+    color: #fff;
+    text-decoration: none;
+  }
+  .header-global .header-logo {
+    width: auto;
+  }
+  .header-global .phase-tag {
+    margin-left: 10px;
+    margin-top: 4px;
+    vertical-align: top;
+  }
+  .header-proposition #proposition-menu {
+    margin-top: 5px;
+  } 
+}
+.dmspeak .heading-xmedium, .error-page .heading-xmedium {
+  font-family: "nta",Arial,sans-serif;
+  font-weight: 700;
+  text-transform: none;
+  font-size: 20px;
+  line-height: 1.11111;
+  margin-top: 35px;
+  margin-bottom: 10px;
+}
+.dmspeak>h2:first-child, .error-page>h2:first-child, .dmspeak>h3:first-child, .error-page>h3:first-child {
+  margin-top: 0;
+}
+.summary-item-heading, .summary-item-heading-first {
+  font-family: "nta",Arial,sans-serif;
+  font-weight: 700;
+  text-transform: none;
+  font-size: 20px;
+  line-height: 1.11111;
+  position: relative;
+  padding: 35px 25% 0 0;
+  margin: 0 0 10px 0;
+  text-align: left;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.summary-item-field-headings-visible td, .summary-item-field-headings-visible th {
+  font-family: "nta",Arial,sans-serif;
+  font-weight: 700;
+  text-transform: none;
+  font-size: 14px;
+  line-height: 1.14286;
+  border-top: 1px solid #bfc1c3;
+}
+.summary-item-field, .summary-item-field-first-half {
+  font-size: 14px;
+  line-height: 1.14286;
+}
+table.summary-item-body-no-bottom-border-text-large tbody td, table.summary-item-body-no-bottom-border-row-bold-borders-text-large tbody td, table.summary-item-body-no-bottom-border-row-bold-borders tbody td, table.summary-item-body-no-bottom-border tbody td, table.summary-item-body-row-bold-borders-text-large tbody td, table.summary-item-body-row-bold-borders tbody td, table.summary-item-body tbody td {
+  padding-top: 12px;
+  padding-bottom: 9px;
+  vertical-align: middle;
+}
+.summary-item-field-first-half {
+  width: 33.3%;
+  padding-right: 12px;
+}
+.summary-item-field .button {
+  margin-bottom: 4px;  
+}
+@media (min-width:641px) {
+  #global-breadcrumb {
+    nav ol {
+      margin: 0 30px;
+    }
+    nav ol li {
+      font-size: 16px;
+      line-height: 1.25;
+    }
+  }
+  .dmspeak .heading-xmedium, .error-page .heading-xmedium {
+    font-size: 27px;
+    line-height: 1.11111;
+  }
+  .summary-item-heading, .summary-item-heading-first {
+    font-size: 27px;
+    line-height: 1.11111;
+  }
+  .summary-item-field-headings-visible td, .summary-item-field-headings-visible th, .summary-item-field, .summary-item-field-first-half {
+    font-size: 16px;
+    line-height: 1.25;
+    width: 33.3%;
+  }
+}
+@media only screen and (min-width: 769px) {
+  #global-header.with-proposition .header-wrapper {
+    .header-global {
+      width: 60%;
+    }
+    .header-proposition {
+      width: 40%;
+      text-align: right;
+      float: right;
+    }
+    .header-proposition #proposition-links {
+      float: right;
+    }
+  }
+}
+
+
+
+/* instruction list */
+.instruction-list-item-box {
+  border: 3px solid #6f777b;
+  font-weight: bold;
+  color: #6f777b;
+  padding: 0.5em 0.75em 0.33em 0.5em;
+  display: table;
+}
+.instruction-list-item-box {
+  font-family: "nta",Arial,sans-serif;
+  text-transform: none;
+  font-size: 14px;
+  line-height: 1.14286;
+}
+.list-number, .instruction-list, .sublist {
+  list-style-type: decimal;
+  padding-left: 20px;
+  margin-bottom: 20px;
+  margin-top: 5px;
+}
+.direct-award-project-overview-page .instruction-list {
+  font-family: "nta",Arial,sans-serif;
+  font-weight: 700;
+  text-transform: none;
+  font-size: 20px;
+  line-height: 1.11111;
+}
+.instruction-list h2 {
+  font-family: "nta",Arial,sans-serif;
+  font-weight: 400;
+  text-transform: none;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: bold;
+}
+.direct-award-project-overview-page .instruction-list-item h2 {
+  font-family: "nta",Arial,sans-serif;
+  font-weight: 700;
+  text-transform: none;
+  font-size: 20px;
+  line-height: 1.11111;
+}
+.direct-award-project-overview-page .instruction-list-item h2 {
+  font-size: 27px;
+  line-height: 1.11111;
+}
+.instruction-list-item-box.complete {
+  border-color: #0b0c0c;
+  color: #0b0c0c;
+}
+
+.list-number li, .instruction-list li, .sublist li {
+  margin-bottom: 5px;
+}
+.divider {
+  padding: 20px 0 20px 0;
+  border-top: 1px solid #dee0e2;
+}
+.instruction-list .divider p {
+  margin-bottom: 0;
+}
+.search-summary em {
+  font-style: normal;
+  font-weight: bold;
+}
+li.instruction-list-item.divider:first-of-type {
+  padding-top: 0px;
+}
+.instruction-list .divider:first-child {
+  border-top: none;
+}
+.direct-award-project-overview-page .instruction-list-item .instruction-list-item-top {
+  font-family: "nta",Arial,sans-serif;
+  font-weight: 400;
+  text-transform: none;
+  font-size: 16px;
+  line-height: 1.25;
+  display: block;
+}
+.divider p.instruction-list-item-top, .divider a.instruction-list-item-action, .divider p.instruction-list-item-box {
+  margin-top: 1em;
+}
+.banner-destructive-without-action, .banner-destructive-with-action, .banner-warning-with-action, .banner-warning-without-action, .banner-success-with-action, .banner-success-without-action, .banner-information-with-action, .banner-information-without-action, .banner-temporary-message-without-action {
+font-family: "nta", Arial, sans-serif;
+font-weight: 400;
+text-transform: none;
+font-size: 18px;
+line-height: 1.2;
+padding: 20px;
+margin-top: 15px;
+border-width: 5px;
+border-style: solid;
+}
+.banner-success-with-action, .banner-success-without-action {
+color: #00823b;
+}
+.banner-message {
+font-family: "nta", Arial, sans-serif;
+font-weight: 400;
+text-transform: none;
+font-size: 18px;
+line-height: 1.2;
+font-weight: bold;
+margin: 0;
+}
+@media (min-width: 641px) {
+  .instruction-list-item-box {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+  .instruction-list h2 {
+    font-size: 19px;
+    line-height: 1.31579;
+  }
+  .direct-award-project-overview-page .instruction-list {
+    font-size: 27px;
+    line-height: 1.11111;
+  }
+  .direct-award-project-overview-page .instruction-list-item .instruction-list-item-top {
+    font-size: 19px;
+    line-height: 1.31579;
+  }
+  .banner-destructive-without-action, .banner-destructive-with-action, .banner-warning-with-action, .banner-warning-without-action, .banner-success-with-action, .banner-success-without-action, .banner-information-with-action, .banner-information-without-action, .banner-temporary-message-without-action {
+  font-size: 24px;
+  line-height: 1.25;
+  }
+  .banner-message {
+  font-size: 24px;
+  line-height: 1.25;
+  }
+}
+
+/* prompt */
+.button-save-wrapper {
+  padding-top: 0;
+  margin: 0px 0px 20px;
+  &:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+.button-save-wrapper * {
+  box-sizing: border-box;
+}
+.button-save-wrapper .save-summary-text {
+  font-family: "nta",Arial,sans-serif;
+  font-weight: 400;
+  text-transform: none;
+  font-size: 14px;
+  line-height: 1.14286;
+  padding: 7px 0;
+}
+.button-save-wrapper .button {
+  margin: 0 0 25px 0;
+}
+@media (min-width: 641px) {
+  .button-save-wrapper .save-button .button {
+    font-size: 16px;
+    line-height: 1.25;
+    margin-right: 20px;
+    float: left;
+  }
+  .button-save-wrapper .save-summary-text {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+/* really no clue why this margin is originally 60px - too big */
+@media (min-width: 641px) {
+  .task-list-items {
+      margin-bottom: 40px;
+  }
+  .task-list-description {
+    padding-left: 35px;
+    margin-bottom: 15px;
+  }
+}
+
+
+
+.task-not-started--grey {
+  background: $panel-colour;
+  color: $black;
+}
+
+.task-list--column {
+  .task-name {
+    float: none;
+  }
+  .task-completed {
+    display: block;
+    max-width: 103px;
+    margin-top: 4px;
+    float: none;
+    clear: left;
+  }
+  .task-not-started {
+    display: block;
+    max-width: 145px;
+    margin-top: 4px;
+    float: none;
+  }
+  .task-completed.button {
+    max-width: 138px;
+  }
+}
+.task-list--lowercase {
+  .task-completed {
+    margin-top: 2px;
+    letter-spacing: normal;
+    text-transform: none;
+  }
+}
+.task-list--transparent {
+  .task-not-started {
+    background: none;
+    padding-right: 0;
+    color: $black;
+  }
+  &.task-list--column .task-not-started {
+    padding-left: 0;
+  }
+  .task-completed.button {
+    background: $button-colour;
+  }
+  .task-not-started.button {
+    background: none;
+    box-shadow: none;
+    text-decoration: underline;
+    &:hover,
+    &:focus {
+      color: $secondary-text-colour;
+      background: none;
+    }
+    &:active {
+      color: $secondary-text-colour;
+      background: none;
+    }
+  }
+}
+
+.task-list--simple {
+  .task-list-item {
+    &:first-child { border-top: none; }
+    &:after { display: none; }
+    border-bottom: none;
+    padding-top: 0;
+    padding-bottom: 5px;
+    list-style-type: disc;
+  }
+}
+.task-list--start-page {
+  .task-name {
+    width: auto;
+  }
+  p.task-name {
+    margin-bottom: 0;
+  }
+  .task-name.button {
+    margin-bottom: 8px;
+  }
+}
+@media (min-width: 641px) {
+  .task-list--simple {
+    .task-list-description {
+      margin-bottom: 10px;
+    }
+  }
+  .task-list--short-margin {
+    margin-top: 30px;
+    .task-list-items {
+        margin-bottom: 35px;
+    } 
+  }
+}
+.task-list:not(.task-list--simple) .task-list-items--single-task .task-list-item {
+  border-top: none;
+  border-bottom: none;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: -5px;
+}
+
+.button-save {
+  background-color: #00823b;
+  position: relative;
+  display: -moz-inline-stack;
+  display: inline-block;
+  padding: .526315em .789473em .263157em;
+  border: none;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-appearance: none;
+  -webkit-box-shadow: 0 2px 0 #003618;
+  -moz-box-shadow: 0 2px 0 #003618;
+  box-shadow: 0 2px 0 #003618;
+  font-size: 1em;
+  line-height: 1.25;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  cursor: pointer;
+  color: #fff;
+  font-family: "nta", Arial, sans-serif;
+  font-weight: 400;
+  text-transform: none;
+  font-size: 18px;
+  line-height: 1.2;
+}
+@media (min-width: 641px) {
+  .button-save {
+    font-size: 24px;
+    line-height: 1.25;
+  }
+}
+
+.task-list--start-page .task-list-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.task-list-description--small {
+  font-size: 16px;
+  margin-left: 35px;
+  border-left: 10px solid #BFC1C3;
+  padding-left: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 25px;
+}
+.task-list-description--small strong {
+  font-weight: bold;
+}
+
+.task-list--small-titles .task-list-section {
+  font-size: 19px;
+  line-height: 25px;
+}
+.task-list--small-titles {
+  margin-left: -25px !important;
+  .task-list-section-number {
+    min-width: 25px;
+  }
+}
+@media (min-width: 641px) {
+  .task-list--small-titles {
+    .task-list-description, .task-list-items {
+      padding-left: 25px;
+    }
+    .task-list-description--small {
+      margin-left: 25px;
+      padding-left: 15px;
+    }
+  }
+}
+.current-step {
+  // padding-top: 20px;
+  // padding-left: 20px;
+  // margin-left: -20px;
+  // padding-bottom: 0px;
+  .button {
+    // margin-bottom: 30px;
+  }
+
+  // margin-bottom: 30px;
+}
+
+.task-list--with-lines > li {
+  &:before {
+    height: 1px;
+    display: block;
+    content: " ";
+    background: #BFC1C3;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 25px;
+  }
+  &.current-step {
+    position: relative;
+    z-index: 1;
+    &:after {
+      height: 100%;
+      background: #F8F8F8;
+      position: absolute;
+      display: block;
+      content: " ";
+      top: 0;
+      width: calc(100% + 10px);
+      z-index: -1;
+      padding-bottom: 20px;
+      margin-left: -10px;
+      // border-top: 1px solid #bfc1c3;
+    }
+    &:before {
+      margin-left: -10px;
+    }
+    + li:before {
+      margin-left: -10px; 
+    }
+  }
+  &:first-child:before {
+    display: none;
+  }
+}
+.task-list--with-lines.task-list--short-margin .task-list-items {
+  margin-bottom: 20px;
+}
+
+.lots-of-space {
+  margin-top: 50px;
+}
+
+/* some header stuff which i apparently did not do */
+#global-header.with-proposition .header-wrapper {
+  .header-title {
+    float: left;
+    font-family: "nta",Arial,sans-serif;
+    font-weight: normal;
+    padding-top: 7px;
+    font-size: 24px;
+  }
+  .header-title a {
+    color: #fff;
+    text-decoration: none;
+  }
+  .header-global,
+  .header-global .header-logo {
+    width: auto !important;
+  }
+}

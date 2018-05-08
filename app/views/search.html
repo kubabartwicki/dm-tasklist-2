@@ -1,0 +1,2558 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Search – Digital Marketplace
+{% endblock %}
+
+{% block content %}
+<link type="text/css" rel="stylesheet" media="screen" href="/public/stylesheets/dm-styles.css" />
+<style>
+ a, button, input[type="submit"] {
+ 	pointer-events: none !important;
+ }
+</style>
+
+<div id="global-breadcrumb" class="header-context">
+  <nav>
+    <ol class="group" role="breadcrumbs">
+        <li><a href="/" class="can-click">Digital Marketplace</a></li>      
+    </ol>
+  </nav>
+</div>
+
+<div id="wrapper">
+    <main id="content" role="main">
+      
+  
+
+      
+<header class="page-heading">
+        <h1>Search results</h1>
+</header>
+<div id="js-dm-live-search-wrapper" class="grid-row search-results-page">
+  <form action="/g-cloud/search" method="get" id="js-dm-live-search-form">
+    <section class="column-one-third search-page-filters" aria-label="Search filters">
+          
+  <div class="govuk-option-select filter-field-text">
+  <div class="container-head">
+    <label class="option-select-label" for="keywords">
+      Keyword search
+    </label>
+  </div>
+  <div class="container-search">
+    <input type="search" name="q" id="keywords" value="" maxlength="200">
+    <input class="submit" type="submit" value="Search">
+  </div>
+</div>
+
+
+<div id="js-dm-live-search-categories" class="js-dm-live-search-fade">
+  <div class="lot-filters">
+    <h2>Choose a category</h2>
+    
+    
+  
+
+  
+  
+  
+
+  <ul >
+    
+      
+         
+  
+    <li aria-current="page"><strong>All categories</strong>
+  
+
+  
+    
+  
+
+  
+  
+  
+
+  <ul class="lot-filters--last-list">
+    
+      
+        <li><a href="/g-cloud/search?lot=cloud-hosting">Cloud hosting (2741)</a></li>
+      
+    
+      
+        <li><a href="/g-cloud/search?lot=cloud-software">Cloud software (6557)</a></li>
+      
+    
+      
+        <li><a href="/g-cloud/search?lot=cloud-support">Cloud support (9951)</a></li>
+      
+    
+  </ul>
+  
+  </li>
+      
+    
+  </ul>
+  </div>
+</div>
+
+
+
+<div class="dm-filters">
+    <div id="js-dm-live-filter-title" class="dm-filter-title js-dm-live-search-fade">
+    <h2 class="apply-filters-title">Apply filters</h2>
+    <a id="dm-clear-all-filters" class="clear-filters-link" href="/g-cloud/search?q=" role="button">Clear filters</a>
+  </div>
+  <div>
+    
+      
+        <div class="govuk-option-select" >
+  <div class="container-head js-container-head">
+    <div class="option-select-label">Supplier type</div>
+  </div>
+  <div class="options-container" id="supplier-type" data-framework="g-cloud" >
+    <div class="js-auto-height-inner">
+      
+        <label for="resellingType-not_reseller">
+          <input name="resellingType" value="not_reseller" id="resellingType-not_reseller" type="checkbox" aria-controls="search-summary-accessible-hint-wrapper">
+          Not a reseller
+        </label>
+      
+        <label for="resellingType-reseller_extra_features_and_support">
+          <input name="resellingType" value="reseller_extra_features_and_support" id="resellingType-reseller_extra_features_and_support" type="checkbox" aria-controls="search-summary-accessible-hint-wrapper">
+          Reseller providing extra features and support
+        </label>
+      
+        <label for="resellingType-reseller_extra_support">
+          <input name="resellingType" value="reseller_extra_support" id="resellingType-reseller_extra_support" type="checkbox" aria-controls="search-summary-accessible-hint-wrapper">
+          Reseller providing extra support
+        </label>
+      
+        <label for="resellingType-reseller_no_extras">
+          <input name="resellingType" value="reseller_no_extras" id="resellingType-reseller_no_extras" type="checkbox" aria-controls="search-summary-accessible-hint-wrapper">
+          Reseller (no extras)
+        </label>
+      
+    </div>
+  </div>
+</div>
+      
+    
+      
+        <div class="govuk-option-select" >
+  <div class="container-head js-container-head">
+    <div class="option-select-label">User support</div>
+  </div>
+  <div class="options-container" id="user-support" data-framework="g-cloud" >
+    <div class="js-auto-height-inner">
+      
+        <label for="emailOrTicketingSupport-yes">
+          <input name="emailOrTicketingSupport" value="yes" id="emailOrTicketingSupport-yes" type="checkbox" aria-controls="search-summary-accessible-hint-wrapper">
+          Email or online ticketing
+        </label>
+      
+        <label for="phoneSupport">
+          <input name="phoneSupport" value="true" id="phoneSupport" type="checkbox" aria-controls="search-summary-accessible-hint-wrapper">
+          Phone
+        </label>
+      
+        <label for="webChatSupport-yes">
+          <input name="webChatSupport" value="yes" id="webChatSupport-yes" type="checkbox" aria-controls="search-summary-accessible-hint-wrapper">
+          Web chat
+        </label>
+      
+    </div>
+  </div>
+</div>
+      
+    
+      
+        <div class="govuk-option-select" >
+  <div class="container-head js-container-head">
+    <div class="option-select-label">Staff security clearance</div>
+  </div>
+  <div class="options-container" id="staff-security-clearance" data-framework="g-cloud" >
+    <div class="js-auto-height-inner">
+      
+        <label for="staffSecurityClearanceChecks-staff_screening_to_bs7858_2012">
+          <input name="staffSecurityClearanceChecks" value="staff_screening_to_bs7858_2012" id="staffSecurityClearanceChecks-staff_screening_to_bs7858_2012" type="checkbox" aria-controls="search-summary-accessible-hint-wrapper">
+          Conforms to BS7858:2012
+        </label>
+      
+    </div>
+  </div>
+</div>
+      
+    
+      
+        <div class="govuk-option-select" >
+  <div class="container-head js-container-head">
+    <div class="option-select-label">Minimum government security clearance</div>
+  </div>
+  <div class="options-container" id="minimum-government-security-clearance" data-framework="g-cloud" >
+    <div class="js-auto-height-inner">
+      
+        <label for="governmentSecurityClearances-dv">
+          <input name="governmentSecurityClearances" value="dv" id="governmentSecurityClearances-dv" type="checkbox" aria-controls="search-summary-accessible-hint-wrapper">
+          Developed Vetting (DV)
+        </label>
+      
+        <label for="governmentSecurityClearances-sc">
+          <input name="governmentSecurityClearances" value="sc" id="governmentSecurityClearances-sc" type="checkbox" aria-controls="search-summary-accessible-hint-wrapper">
+          Security Clearance (SC)
+        </label>
+      
+        <label for="governmentSecurityClearances-bpss">
+          <input name="governmentSecurityClearances" value="bpss" id="governmentSecurityClearances-bpss" type="checkbox" aria-controls="search-summary-accessible-hint-wrapper">
+          Baseline Personnel Security Standard (BPSS)
+        </label>
+      
+    </div>
+  </div>
+</div>
+      
+    
+      
+        <div class="govuk-option-select" >
+  <div class="container-head js-container-head">
+    <div class="option-select-label">Pricing options</div>
+  </div>
+  <div class="options-container" id="pricing-options" data-framework="g-cloud" >
+    <div class="js-auto-height-inner">
+      
+        <label for="educationPricing">
+          <input name="educationPricing" value="true" id="educationPricing" type="checkbox" aria-controls="search-summary-accessible-hint-wrapper">
+          Discount for educational organisations
+        </label>
+      
+        <label for="freeVersionTrialOption">
+          <input name="freeVersionTrialOption" value="true" id="freeVersionTrialOption" type="checkbox" aria-controls="search-summary-accessible-hint-wrapper">
+          Free trial
+        </label>
+      
+    </div>
+  </div>
+</div>
+      
+    
+  </div>
+  <button class="button-save js-hidden js-dm-live-search" type="submit" aria-controls="search-summary-accessible-hint-wrapper">Filter</button>
+</div>
+    </section>
+  </form>
+  <section class="column-two-thirds" aria-label="Search results">
+    
+    <div id="search-summary-accessible-hint-wrapper" class="search-summary-accessible-hint-wrapper" aria-atomic="true" aria-live="polite" aria-relevant="additions text">
+      <div id="js-dm-live-search-summary-accessible-hint">
+  19249 results found
+</div>
+    </div>
+    <div id="js-dm-live-search-summary" class="js-dm-live-search-fade">
+  <p class="search-summary">
+    <span class="search-summary-count">19249</span> results found in <em>All categories</em>
+  </p>
+
+  
+
+</div>
+    <div id="js-dm-live-save-search-form">
+  <form action="/buyers/direct-award/g-cloud/save-search">
+    <input type="hidden" name="search_query" value="">
+    <div class="button-save-wrapper grid-row">
+      <div class="save-summary-text column-three-quarters">
+        Save details of your search and download your search results.
+      </div>
+      <div class="save-button column-one-quarter">
+        <button id="save-search" class="button-save" role="button" type="submit"
+          data-analytics="trackEvent"
+          data-analytics-category="Direct Award"
+          data-analytics-action="Save search"
+          data-analytics-label="19249">
+          Save search
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+    <div id="js-dm-live-search-results" class="js-dm-live-search-fade">
+  
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/620879144023602">Cloud Service Integration and Management Services (SIAM)</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Cyber Security Partnership LLP
+    </p>
+
+    <p class="search-result-excerpt">
+        CSP has extensive experience of providing security architecture services to HMG customers. CSP consultants have been heavily involved in the move from GPMS to GSC and the requirements of customers to transition services from localised data centres to cloud platforms and from physical to virtual ICT infrastructure. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud support
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/821088356266260">Amazon Glacier</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Alscient Limited
+    </p>
+
+    <p class="search-result-excerpt">
+        Amazon Glacier is a storage service optimised for infrequently used data, or &quot;cold data.&quot; The service provides secure, durable, and extremely low-cost storage for data archiving and backup. You can store your data cost effectively for months, years, or even decades. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud hosting
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/413863569029280">Google Cloud Platform - Big Data &amp; Analytics</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Netpremacy Limited
+    </p>
+
+    <p class="search-result-excerpt">
+        Integrated end-to-end Big Data solution, that lets you capture, process, store and analyze your data within a single platform. You can focus on finding insights rather than managing your infrastructure. Combine cloud-native services with open source tools as needed, both in batch and stream mode. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud hosting
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/724526473256176">Azure HDInsights</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Microsoft
+    </p>
+
+    <p class="search-result-excerpt">
+        Microsoft’s Hadoop-based managed service that brings an Apache Hadoop-based solution to the cloud. Quickly provision clusters, scale up or down to manage cost and performance or delete clusters whilst persisting the data. https:&#x2F;&#x2F;azure.microsoft.com&#x2F;en-us&#x2F;services&#x2F;hdinsight&#x2F; 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud hosting
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/810327888057320">Certified Scrum Product Owner (CSPO) Training</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Kumoco
+    </p>
+
+    <p class="search-result-excerpt">
+        2-day Certified Scrum Product Owner (CSPO) Training. Certified Scrum Product Owner professionals have been taught the Scrum terminology, practices, and principles that enable them to fulfill the role of Product Owner on a Scrum team. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud support
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/563075450386310">Incessant BPM Testing as-a-Service</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        INCESSANT TECHNOLOGIES (UK) LIMITED
+    </p>
+
+    <p class="search-result-excerpt">
+        Incessant BPM Testing as-a-Service is a service that enables organisations to initiate tests on BPM applications without upfront investment of technology and resources. It brings BPM testing expertise to organisations by combining functional and automated testing techniques. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud software
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/776733365402477">Infrastructure security assessment</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        NCC Services Limited. Trading as NCC Group.
+    </p>
+
+    <p class="search-result-excerpt">
+        Consultancy engagements targeting physical and virtual hosts within the cloud and the networks that support them. Delivered as either an interactive penetration test, a bespoke build review or more typically a combination of the two. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud support
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/462971084494121">Agile Service Desk Suite</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Agiloft Inc
+    </p>
+
+    <p class="search-result-excerpt">
+        Winner of Best Overall Value four years in a row, Agiloft Service Desk Suite is top rated by users and analysts alike. Streamline your operations to close tickets faster, improve consistency, and gain actionable insights. With a customizable end user portal, full workflow engine, dashboard performance metrics, and more. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud software
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/191899861836264">Interoperability Testing Services</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Cognizant Technology Solutions UK Limited
+    </p>
+
+    <p class="search-result-excerpt">
+        Done in order to ensure that an application hosted on cloud works across multiple environments and various cloud platforms. This enables easy migration of applications between infrastructures 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud support
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/341288304995133">Cybereason Endpoint Detection and Response with Nex-Gen AV</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        APPTechnology
+    </p>
+
+    <p class="search-result-excerpt">
+        APPtechnology provides Real Time Prevention &amp; Detection of Cyber Attacks through Endpoint Protection technology and NGAV, covering;
+
+Prevention (NGAV &amp; EDR)
+Detection (EDR)
+Response&#x2F;Investigation
+Hunting
+
+A single software agent provides EDR and NGAV functionality managed through a single dashboard. 
+
+Optional 24x7 SOC services covering Active Monitoring, Adversary Hunting, Advanced Analysis 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud software
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/371474405697822">Imperago Access Control</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        HFX Limited
+    </p>
+
+    <p class="search-result-excerpt">
+        Imperago Access Control Cloud Solution. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud software
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/838025910341593">Mobile Testing Service</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Mastek (UK) Ltd
+    </p>
+
+    <p class="search-result-excerpt">
+        Mastek provides a customized mobile testing service to support end-to-end testing for native, hybrid and web-based mobile applications. It includes functional, performance and security testing as well as test automation using industry leading technologies and tools. Our cloud based Mobile Application testing approach provides scalability and cost effectiveness. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud support
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/881558889195057">Medium NHS Cloud Virtual Machine (offline)</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        MCSA Group Limited
+    </p>
+
+    <p class="search-result-excerpt">
+        2 vCPU 4GB vRAM VM (inc No OS License*, OS Management, Antivirus, 60MB SAN Storage) 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud hosting
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/637368864776982">Test Management Services for Cloud</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Farsight Consulting Ltd
+    </p>
+
+    <p class="search-result-excerpt">
+        Farsight&#x27;s Test Management for Cloud Service is a comprehensive, modular test management service to support organisations needing to plan or deliver testing. 
+
+The services covers development of a strategy, plan and an approach for testing; and also supports delivery of the test plan. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud support
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/653826762486391">Legal Document Hosting</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Epiq Systems Ltd
+    </p>
+
+    <p class="search-result-excerpt">
+        We provide document processing and hosting services for clients faced with challenges relating to the review of documents and data in the context of investigations and dispute resolution. Our services prepare documents for online review and provide support and advice on best use of the platform. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud software
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/733926658052376">smartnumbers control</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Resilient
+    </p>
+
+    <p class="search-result-excerpt">
+        During office moves or disasters, cloud-based smartnumbers control service diverts incoming telephone calls automatically or at your command through a business portal. This provides a business continuity plan to protect against access denial, bad weather, terrorist attack or communications failure. The service is compatible with SIP, TDM &amp; PSTN. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud software
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/141660831150566">Azure Storage - Blobs</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Microsoft
+    </p>
+
+    <p class="search-result-excerpt">
+        REST-based blob object storage for unstructured data in the cloud. Available in the UK Datacentre region. https:&#x2F;&#x2F;azure.microsoft.com&#x2F;en-us&#x2F;services&#x2F;storage&#x2F; 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud hosting
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/321805767425239">Office 365 Consultancy</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Transparity Solutions Limited
+    </p>
+
+    <p class="search-result-excerpt">
+        Transparity provide a range of Office 365 consultancy services, from initial onsite discovery workshops to solution design, migration and support. We cover the entire Office 365 suite and can ensure you get the most out of your investment in the platform. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud hosting
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/263847477596465">Civica Booking 360</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Civica UK Limited
+    </p>
+
+    <p class="search-result-excerpt">
+        Booking 360 is an online booking solution enabling council staff and citizens to view, book, pay and cancel available facilities, objects and services anytime on any device; enabling any booking to be streamlined from enquiry to completion. The flexible solution allows slot details to be configured on an individual basis. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud software
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/202181230641165">Identity Federation Service</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Daemon Directory Services Ltd
+    </p>
+
+    <p class="search-result-excerpt">
+        The DDS Identity Federation Service (IFS) is an authentication and authorisation &quot;routing hub&quot; offering federated single-sign-on to cloud hosted services. The IFS hub supports all industry standards  for  authentication, authorisation, (SAML, OAUTH etc.) and is delivered as a fully managed cloud service or as a partially-managed on-premise application. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud software
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/243802570952546">Windows 10</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Sword IT Solutions Ltd
+    </p>
+
+    <p class="search-result-excerpt">
+        This service is built upon our battle-tested desktop migration offering and will take you from concept through planning and design to delivery and migration. It will deliver tangible business value within your organisation by planning, designing, deploying and helping you manage Windows 10 devices in the most effective way. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud support
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/410900334837809">Google Cloud Platform - Machine Learning</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Netpremacy Limited
+    </p>
+
+    <p class="search-result-excerpt">
+        Modern machine learning services, with pre-trained models and a service to generate your own tailored models. Our neural net-based ML service has better training performance and increased accuracy compared to other large scale deep learning systems. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud hosting
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/716613852186259">Intrusion Analysis Training</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Context Information Security
+    </p>
+
+    <p class="search-result-excerpt">
+        Drawing from our experience of training our own analysts,
+Context has developed a number of training packages designed specifically to provide analysts with the skills they need to know in order to conduct effective intrusion analysis. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud support
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/424945003463201">Medayo Patient Care Platform</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Medayo
+    </p>
+
+    <p class="search-result-excerpt">
+        Medayo provides medical and management staff with real time information allowing them to focus on the patient&#x27;s care.
+
+With the capability of integrating with external systems; Medayo provides a unified view of the patients&#x27; journey, overview of the hospital and other care providers. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud software
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/324989902154171">AWS CloudTrail</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        BJSS Limited
+    </p>
+
+    <p class="search-result-excerpt">
+        Amazon CloudTrail provides a history of AWS API calls for your account, including API calls made via the AWS Management Console, AWS SDKs, command line tools, and higher-level AWS services (e.g. AWS CloudFormation). The AWS API call history produced by CloudTrail enables security analysis, resource change tracking, and compliance auditing. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud hosting
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/904710273810658">Document and Records Management Transition to Cloud Services (KIM, EDRM)</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        VISIONIST
+    </p>
+
+    <p class="search-result-excerpt">
+        Enabling transition from legacy EDRM or paper solutions to cloud based knowledge and information management systems. Enabling cross department collaboration.  Full end to end transition and transformation of your knowledge and information management systems, from business case development, senior stakeholder engagement through to project delivery and operational support. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud support
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/414708961346455">Learning Review</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        i3Works Ltd
+    </p>
+
+    <p class="search-result-excerpt">
+        Our Learning Review cloud based service includes lessons identified, shared knowledge, knowledge management systems to promote the sharing, dissemination, analysis and forecasting of knowledge across organisations.
+
+i3Works are actively involved in the APM’s Knowledge Management SIG and have been active members of the IPA’s Knowledge Sharing forum since its inception. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud software
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/282307846317477">DESKTOP MIGRATION SERVICES</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Trustmarque Solutions Limited
+    </p>
+
+    <p class="search-result-excerpt">
+        Trustmarque&#x27;s Desktop Migration Service has been developed to take industry best practices&#x2F;tried and tested methodologies to enable a swift delivery of everything needed to begin a desktop migration within a short time-frame. Trustmarque’s service can deliver an end-user computing environment that utilises the most appropriate balance of cloud&#x2F;on premises&#x2F;hybrid computing. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud support
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/918356587722121">CRM/CX  - Oracle CX Cloud Suite</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Capricorn Ventis Ltd.
+    </p>
+
+    <p class="search-result-excerpt">
+        Capventis is an  Oracle Partner for Oracle CX Cloud Suite, a cloud based suite covering the core functions of Marketing, Sales, Commerce, and Service, Capventis have expertise and experience to implement rapid agile solutions and to provide expert services around all of this solution. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud support
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/442828939353599">Digital customer experience management</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Clerkswell
+    </p>
+
+    <p class="search-result-excerpt">
+        ClerksWell provide the consultancy and web content management (WCM&#x2F; CMS) technology to enable you to manage your customer&#x27;s digital experience to increase engagement, improve customer service, lead generation and loyalty. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud support
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/735745416500423">Cirrus Contact Centre Pro +</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Cirrus
+    </p>
+
+    <p class="search-result-excerpt">
+        Cirrus Contact Centre Pro + combines the most advanced voice platform capabilities with a full digital channel suite of solutions also. Enterprise class, hosted solution on a pay-as-you-use basis that offers support for social, SMS and web chat, and email channels also. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud hosting
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/568439282485001">Vendor Risk Management</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        DVV Solutions
+    </p>
+
+    <p class="search-result-excerpt">
+        Vendor Risk Management (VRM) - offers SaaS Software to automate, centrally manage,  create a workflow process and remediate risk associated with supplier access to client data, networks or other use cases around the client-supplier relationship. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud software
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/156502889661166">Commercial Backup Service (unclassified data back up)</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Carrenza Limited
+    </p>
+
+    <p class="search-result-excerpt">
+        The Carrenza Commercial Backup as a Service solution helps you protect your data, including all physical and virtual servers and storage devices. The service is built using industry-leading technology for both agentless snapshot and agent based offerings. 24&#x2F;7 management and support services are available. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud hosting
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/767728731382065">Advanced Billing</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Cloudreach Europe Limited
+    </p>
+
+    <p class="search-result-excerpt">
+        Advanced Billing from Cloudreach addresses the need for centralised reconciliation of your public cloud spend. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud support
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/417390051766929">Agile Delivery</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Difrent
+    </p>
+
+    <p class="search-result-excerpt">
+        Difrent employs a flexible model in which our core team of consultants is supplemented by our customers’ staff, third parties and tried and tested, highly skilled professional associates with in-depth Agile expertise 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud support
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/658661425566477">Drupal private cloud</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Code Enigma Limited
+    </p>
+
+    <p class="search-result-excerpt">
+        We provide ISO 27001 certified specialist hosting services for Drupal, featuring an optimised LAMP-replacement stack ready to host Drupal in a high performance and scalable environment, optional version control and automated deployment services, platformed on our VMWare private cloud which is co-located in Pulsant&#x27;s Tier four datacentre in the UK. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud hosting
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/892528406728438">SAP Digital Business Services (DBS) - Hybris Marketing Services</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        SAP UK Ltd
+    </p>
+
+    <p class="search-result-excerpt">
+        This Service supports the activation, configuration, integration and implementation of SAP Hybris Marketing Cloud. Extends via Hybris Commerce Cloud for e-commerce and marketplace services. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud support
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/793838591373812">Azure SQL Data Warehouse</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Comparex UK Ltd
+    </p>
+
+    <p class="search-result-excerpt">
+        An enterprise-class, distributed database capable of processing massive volumes of relational and non-relational data. A cloud data warehouse that combines proven SQL capabilities with the ability to grow, shrink, and pause in seconds. SQL Data Warehouse is deeply ingrained into Azure, deploys in seconds. Available in UK Datacentre region. https:&#x2F;&#x2F;azure.microsoft.com&#x2F;en-us&#x2F;services&#x2F;sql-data-warehouse&#x2F; 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud hosting
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/673087560407360">Secure Service Management Capability</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Fujitsu Services Limited
+    </p>
+
+    <p class="search-result-excerpt">
+        Fujitsu&#x27;s Secure Service Management Capability provides an IT Service Management toolset (ITSM) with enhanced capabilities, which can be hosted in a multiple different environments from OFFICIAL to ABOVE SECRET. Based on BMC Remedy and includes modules for Incident, Problem and Change Recording, Standard Reporting, Knowledge Management, Asset and Configuration Management. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud software
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/977976868268330">Security and Network Operations Centre Advisory and Design for Cloud Service</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        6 POINT 6
+    </p>
+
+    <p class="search-result-excerpt">
+        Our service focusses on the effective strategy, design, deployment, accreditation and operational running of a Security and Network Operations Centre (SOC &#x2F; NOC). This service will enable you to pro-actively control activities and incidents taking place across your estate. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud support
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/321844732414731">MuleSoft Anypoint Platform (Public Cloud)</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        MuleSoft Inc.
+    </p>
+
+    <p class="search-result-excerpt">
+        MuleSoft’s Anypoint Platform™ is a leading solution for API-led connectivity that creates an application network of apps, data, and devices, both on-premises and in the cloud. This hybrid integration platform includes iPaaS, ESB, and a unified solution for API management, design and publishing. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud hosting
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/854912701679479">Big Data Analytics</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        The Server Labs Ltd.
+    </p>
+
+    <p class="search-result-excerpt">
+        Combining the latest in-memory BI technologies, and an intimate knowledge of back end systems, we can deliver cross module analytical reporting at a fraction of the time and cost of traditional business warehouse solutions. Deployed in the cloud, you have no hardware to buy. Clouds Supported: Azure, AWS 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud software
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/714758435058041">Cloud Hosting</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Redweb Ltd
+    </p>
+
+    <p class="search-result-excerpt">
+        Scalable, resilient, secure and fully redundant. Public, Hybrid and Private clouds are built on VMware VSphere in a high availability configuration across a network of data centres. Self-managed or fully managed, supported 24x7, organisations have flexible on-demand access to compute resources. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud hosting
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/765365227584235">CDM and Risk Management Services</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Lendlease
+    </p>
+
+    <p class="search-result-excerpt">
+        Our CDM and Risk Management service is delivered through the cloud in partnership with our clients. We assist clients throughout a project; from initial brief through option selection, business case development, budget development, procurement strategy, supply chain management, commission and handover. Our team specialises in maximising value and service optimisation. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud support
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/753822997161660">Viderum CKAN Developer Platform</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Viderum
+    </p>
+
+    <p class="search-result-excerpt">
+        Your customised CKAN-based data portal securely deployed on our infrastructure. We allow national, regional and local governments and institutions to operate an easy-to-use open data platform that is quickly set up and easy to maintain. The Viderum CKAN Platform offers multiple extensions with bespoke customisation and responsive developer support. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud hosting
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/390058159078360">Cloud VoIP</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Foehn
+    </p>
+
+    <p class="search-result-excerpt">
+        Foehn&#x27;s Cloud Phone System provides a highly resilient voice platform with industry leading service uptime. We proactively monitor and manage quality of service across our network under a SLA with 24x7x365 expert technical support. Foehn’s Cloud Phone System enables organisations to make significant cost savings, while improving efficiencies and flexibility. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud software
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/343116441223336">i3 Digital G-Cloud Private Cloud Service</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        i3 Digital
+    </p>
+
+    <p class="search-result-excerpt">
+        i3 Digital Private Cloud allows you to create, build and scale Virtual Servers on demand. Customers typically use these for Production, Test and Development environments, priced on an Annual basis. All services are ISO27001 accredited (IL2 equivalent). 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud hosting
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/508029267603098">Firmstep Forms Offline</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Firmstep Ltd
+    </p>
+
+    <p class="search-result-excerpt">
+        An extension to the Firmstep Forms solution. It is perfect for staff or contractors who need to capture data in the field, or access their jobs list, but cannot rely on mobile connectivity. This solution provides offline capability to the market leading online eforms package, without needing an &#x27;App&#x27; 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud software
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/896796164875112">Content strategy for Cloud services and Government as a Platform (GaaP)</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Scroll LLP
+    </p>
+
+    <p class="search-result-excerpt">
+        Rahel Anne Bailie, Scroll’s Head of Content Strategy, is a senior content strategist at the forefront of the field internationally. She teaches on our courses and at FH Joanneum (Graz) on the Content Strategy Masters Programme. Our content strategists are all trained in her methodology. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud support
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/591273283693548">TheOneView</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        EMIS Ltd
+    </p>
+
+    <p class="search-result-excerpt">
+        TheOneView is a software platform for Governance, Risk and Compliance platform (GRC) with modules for Risk, Business Continuity Management, Audit, Business Impact Assessments, Checks, Document Management and others. Hosted in the UK and is designed for Medium to Large businesses, healthcare and Government. ISO aligned and mobile apps available. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud software
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/236358768122157">Finance Transformation</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Capgemini UK plc
+    </p>
+
+    <p class="search-result-excerpt">
+        Capgemini’s Finance Transformation service can support Chief Financial Officers (CFOs) and their teams in improving the efficiency and effectiveness of their finance function. This can incorporate help in identifying and implementing Cloud services that can support a client’s finance function 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud support
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/653805435924041">BlueDice Business Analysis</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Bluedice Ideas Limited
+    </p>
+
+    <p class="search-result-excerpt">
+        BlueDice Ideas offers exceptional skills in translating complex ideas and making connections in the pursuit of excellence. We achieve this through a focus on improving outcomes through effective,efficient process design. We take a holistic view of delivery outcomes to define future business architecture and customer-centric experiences and realisation of efficiencies. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud support
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/490646169194641">Azure Active Directory - Basic</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Softcat Limited
+    </p>
+
+    <p class="search-result-excerpt">
+        Cloud Identity. Basic identity and access management for cloud and hybrid applications and users. https:&#x2F;&#x2F;azure.microsoft.com&#x2F;en-us&#x2F;services&#x2F;active-directory&#x2F; 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud hosting
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/993419204649202">Funnelback Enterprise and Site Search</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Funnelback UK Ltd
+    </p>
+
+    <p class="search-result-excerpt">
+        Funnelback Enterprise Search is a best-of-breed Search technology which offers the ability for users to search multiple data repositories and file types simultaneously. Funnelback&#x27;s search technology not only provides fast and relevant search results, but it can also be completely customised to meet any organisations search requirements. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud software
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/874288419901082">Cisco Spark Video Conferencing Room Systems from MeetingZone</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        MeetingZone Ltd
+    </p>
+
+    <p class="search-result-excerpt">
+        Spark Room Systems consist of a range of video conferencing systems to meet the full range of customer requirements for meeting rooms.
+Using the Spark cloud based platform, Spark Room Systems can collaborate seamlessly with other room systems. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud software
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/474974009996569">Alfresco Product Training Services</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Alfresco Software Ltd
+    </p>
+
+    <p class="search-result-excerpt">
+        Training with Alfresco University is the best way to acquire the right skills for your team to deliver a successful Alfresco implementation. The most cost-effective way to take advantage of this valuable training is through the  Alfresco University Passport. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud support
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/619575859633828">QuoVadis Personal Signing Service (PERS)</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        QuoVadis Online Security Limited
+    </p>
+
+    <p class="search-result-excerpt">
+        A cloud-based personal signing service for internal and external users to sign PDF documents from any device.  The service avoids issues of desktop support for smartcard drivers or signing software.  PERS is well suited to corporate portals or SaaS solutions involving transactions requiring signature or approval, especially involving external&#x2F;mobile users. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud software
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/719096016255158">NFON Enterprise Cloud Telephony</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Bechtle direct Ltd.
+    </p>
+
+    <p class="search-result-excerpt">
+        A cloud telephone system specifically tailored to fit your business needs with scalability up to 250 thousand users. Free internal calls and you can work anywhere and make and take calls on your mobile or PC Softphone &#x2F; Skype for business. No investment in on-premise expensive equipment and maintenance contracts. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud software
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/889578801876638">Agile Project Management</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        i3Works Ltd
+    </p>
+
+    <p class="search-result-excerpt">
+        i3Works’ Agile Project Management service provides tailored Agile project management and support throughout the project lifecycle, including best practice advice on delivery models, Agile methodologies and implementation. We supply qualified and pragmatic Agile practitioners with real world experience of delivering Agile successfully and achieving measurable project benefits and value. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud support
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/336990739998711">Digital Strategy and Roadmap Services</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Capgemini UK plc
+    </p>
+
+    <p class="search-result-excerpt">
+        Capgemini is recognised as one of the leaders in Digital Transformation. Our work with MIT Sloan has benchmarked performance of over 600 organisations across sectors to help identify characteristics of a successful Digital Business. Our research guides us in helping UK government organisations establish strategy and roadmap for the enterprise. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud support
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/276960125266763">Intelligent Customer Support</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        i3Works Ltd
+    </p>
+
+    <p class="search-result-excerpt">
+        I3Works’ Intelligent Customer Support service provides tailored and focused intelligent customer support throughout the programme lifecycle, including best practice advice on delivery models and effective implementation – ensuring the best return on investment. We offer ‘real world’ proven and tested operational models that deliver measurable business benefits and value. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud software
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/779117784353103">Cloud Security Architecture</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Layer 7 IT Security
+    </p>
+
+    <p class="search-result-excerpt">
+        Cloud Security Architecture service provides experience and qualified expertise in the secure development, design and assurance of Cloud Secure Architectures. This service delivers clear design and support of Enterprise Cloud Security Architecture and Technical Security Architecture, for Public, Community, Private and Hybrid clouds. Track record with AWS, Azure, UKCloud 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud support
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/699470652276658">SAP Success Factors</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        NTT DATA UK Limited
+    </p>
+
+    <p class="search-result-excerpt">
+        A cloud-based HR solution designed for alignment and optimisation of the employee lifecycle by putting the right people in the right roles, helping them gain knowledge and skills and then reward and develop them. Functions include: employee central, performance, talent, succession, recruitment compensation and benefits management, workforce planning and payroll. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud software
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/792238170246485">Content Migration Services</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Metataxis
+    </p>
+
+    <p class="search-result-excerpt">
+        Content migration projects are always underestimated, in cost,
+effort and complexity. As information experts, Metataxis can
+help you understand what is feasible and desirable for your
+content migration. We have extensive
+expertise in SharePoint and Office 365 migrations, both from
+network drives and legacy SharePoint systems 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud support
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/740232628146278">Sophos Central Intercept-X (CIX)</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Pugh Computers Ltd
+    </p>
+
+    <p class="search-result-excerpt">
+        Cloud-managed Next-Generation Endpoint Security providing Exploit Prevention technology, Ransomware Protection + Recovery, Sophos Clean (Advanced Remediation + restoration) as well as Sophos Root Cause Analysis to provide detail source of infection information + visualisation 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud software
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/377423955843676">CESG Product Assurance (CPA)</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Context Information Security
+    </p>
+
+    <p class="search-result-excerpt">
+        CPA is  a certificated accreditation process for products to be used by government, public sector and any industries requiring access to UK government accredited networks. CPA certification enables vendors to sell their products into government, the wider public sector and associated industry for use in communications networks requiring IS2&#x2F;IS3 accreditation. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud support
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/786277643654791">Report My Find</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Recipero Ltd
+    </p>
+
+    <p class="search-result-excerpt">
+        REPORTMYFIND is a found property recording system that takes away from police forces the onerous recording of found property. Recipero charge members of the public normally. However, if your force has a licence then reports where the find is within your force area are provided free to the public. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud software
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/458855685019892">Marketer Basic Audience Data Management Cloud Service - B79172</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Oracle Corporation UK Limited
+    </p>
+
+    <p class="search-result-excerpt">
+        The Oracle BlueKai Data Management Platform unifies data so public sector agencies can target relevant audiences across all digital channels, improving outreach and communications effectiveness. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud software
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/630451772648553">Qtip.me - Cloud queuing and Feedback for Customers</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Wild Rest Limited
+    </p>
+
+    <p class="search-result-excerpt">
+        Qtip.me is a cloud service that enables people to queue for a service remotely using their mobile phone allowing freedom to utilise waiting times thereby improving the customer service experience. For the buyer, it brings down operating costs and makes it easy to manage customer queues and interact with customers. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud software
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/837243033428204">Managed Simulated Phishing Campaign</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        SafeHack UK Ltd
+    </p>
+
+    <p class="search-result-excerpt">
+        Managed Phishing campaign combines both the Simulated Phishing Campaign and Phishing Awareness user training. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud support
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/960013646914039">Okta</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Softcat Limited
+    </p>
+
+    <p class="search-result-excerpt">
+        Okta is a leading identity solution providing single-sign on,
+multi-factor authentication, mobile device management and
+provisioning capabilities for cloud based applications 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud software
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/302645178121502">Cloud service project launch</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Sharpe Pritchard Strategy Limited
+    </p>
+
+    <p class="search-result-excerpt">
+        The Project Launch service ensures that your initiative is properly established with firm foundations for success.  We can either hand the project back to you own staff (with our support to help them to keep the project on-track if needed), or take on its management longer term. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud support
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/457351602421723">OpenGov Stories</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        OpenGov
+    </p>
+
+    <p class="search-result-excerpt">
+        OpenGov Stories makes storytelling with data easier than ever. Put data in context with rich narratives, beautiful visualizations, user-friendly design, and powerful drill-down capabilities to inform technical and non-technical stakeholders alike, from educating citizens on strategic priorities to updating internal staff on new initiatives. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud software
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/467782890078288">Hosted Graphite</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Hosted Graphite
+    </p>
+
+    <p class="search-result-excerpt">
+        Hosted Graphite takes the open-source metric graphing tool, Graphite, and adds Grafana dashboards, monitoring, alerts, integrations with all your favourite applications, secure &amp; redundant data storage, simple migration, awesome support and customizable access features.
+
+Avoid service interruptions, reduce lost engineer time and make monitoring a solution again, not another problem. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud hosting
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/245986086779588">Pitney Bowes Location Intelligence APIs</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Pitney Bowes Software Europe Ltd
+    </p>
+
+    <p class="search-result-excerpt">
+        Location Intelligence APIs facilitate you in building innovative location-based applications for multiple platforms (including both web and mobile). The APIs facilitate varied geo-spatial location based information and communication services to the developers. The developers can use this locational data to develop innovative apps for commercial and consumer markets. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud software
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/237184736676711">IBM Big Data Analytics &amp; Data Science Services</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        IBM United Kingdom Ltd
+    </p>
+
+    <p class="search-result-excerpt">
+        IBM provides consultancy and implementation services to enable organisations to gain greater insight and value from the data that they hold, or can access.
+Security cleared architects, data scientists and information specialists work with visual designers, your organisation and your service users to build confidence, relevance and accessibility of data. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud support
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/350988230618849">Cybersecurity - Managed Security Service (MSS) Intrusion Detection and Prevention System (IDS/IDPS)</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Capgemini UK plc
+    </p>
+
+    <p class="search-result-excerpt">
+        Intrusion Detection System (IDS) and Intrusion Prevention System (IPS) are technologies that protect your network and cloud services from cybercriminal attacks by actively detecting (IDS) and blocking (IPS) external threats, before they can reach potentially vulnerable devices on your network or cloud services. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud hosting
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/749028854546293">Disabled Childrens Register</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Idox Software Limited
+    </p>
+
+    <p class="search-result-excerpt">
+        Digital solution for secure online registration of disabled children in the Local Authority community area.  Store and track information to help you to plan quality services for disabled children based on factual information, updated by parents, as child’s development&#x2F;circumstances change.  Includes “Care Passport” option that can be given to providers. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud software
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/300559013243186">Medical Records Scanning and Workflow</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Restore Scan Limited
+    </p>
+
+    <p class="search-result-excerpt">
+        Scanning of legacy and day forward medical records as an offsite service or an onsite system provision. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud software
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/558766697464190">Azure Cortana Intelligence</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Gaia Technologies Plc
+    </p>
+
+    <p class="search-result-excerpt">
+        A fully managed big data and advanced analytics suite that enables you to transform your data into intelligent action. Cortana Intelligence Suite enables core analytics scenarios such as real-time recommendations, customer churn forecasting, fraud detection, predictive maintenance and many more. 
+
+http:&#x2F;&#x2F;www.microsoft.com&#x2F;en-us&#x2F;cloud-platform&#x2F;cortana-intelligence-suite 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud hosting
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/644460673967011">Service Design for Cloud/ICT Services</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Viewdeck Consulting Limited
+    </p>
+
+    <p class="search-result-excerpt">
+        Expert Skills and Capabilities providing: Service Design and development of service management processes, helping you convert strategic objectives into portfolios of services and service assets. Expert practitioners to help you deliver ITILv3 aligned Service Design, Processes, Service Catalogue, Service Levels, Availability, Capacity, IT Service Continuity, Information Security and Supplier Management. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud support
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/765868619120622">Cloud Service Setup – Business Change Management</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Comotion Consulting Ltd
+    </p>
+
+    <p class="search-result-excerpt">
+        We’ll partner with you to transform operations to fully utilise your Cloud services. Together, we’ll build a culture for change through collaboration, co-location, agile working, communications, transparency and continuous focus on user delivery to ensure the deployment and use of Cloud services is embedded, functional, and instinctive within your organisation. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud support
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/587488963651448">AWS Import/Export Snowball</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Amazon Web Services
+    </p>
+
+    <p class="search-result-excerpt">
+        Snowball is a petabyte-scale data transport solution that uses secure appliances to transfer large amounts of data into and out of the AWS cloud. Snowball addresses common challenges with large-scale data transfers including network costs, transfer times, and security concerns. Transferring data with Snowball is fast, secure, and cost effective. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud hosting
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/189085054472310">Oracle Java Cloud Service - Metered</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Oracle Corporation UK Limited
+    </p>
+
+    <p class="search-result-excerpt">
+        The Oracle Java Cloud Service is a complete enterprise grade platform and infrastructure cloud solution for building, deploying, and managing Java EE applications. Use Oracle Java Cloud Service to rapidly provision an application environment with Oracle WebLogic Server as the application container and Oracle Traffic Director as the software load-balancer. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud hosting
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/698155242911526">IBM Collaborative Lifecycle Management on Cloud</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        IBM United Kingdom Ltd
+    </p>
+
+    <p class="search-result-excerpt">
+        IBM® Collaborative Lifecycle Management is a solution that covers the entire software and systems development lifecycle from managing requirements though development and testing to raising, resolving and retesting of defects. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud software
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/135082065314156">Delivery Capability Assessment and Improvement</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        ASE Consulting Ltd
+    </p>
+
+    <p class="search-result-excerpt">
+        ASE provides an objective, evidence-based assessment of your organisation&#x27;s delivery maturity, reviewing its capability to successfully deliver your roadmap of change. Where gaps are identified we support you in addressing these by planning, implementing and embedding lasting and meaningful capability improvements into your organisation. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud support
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/785747816283177">SBL Tenable.io</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Software Box Limited (SBL)
+    </p>
+
+    <p class="search-result-excerpt">
+        A cloud-based vulnerability management solution 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud software
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/986154273088714">Business Intelligence, Big Data and Analytics</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        People Source Consulting Ltd
+    </p>
+
+    <p class="search-result-excerpt">
+        Shared services improve efficiency, reduce costs and help better serve the public. 
+Our Business Intelligence professionals are highly adept at analysing, building, deploying and managing vast data solutions, transforming raw data into meaningful information to support fundamental business operations and the development of cloud technologies. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud support
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/166468221629563">Montvieux Machine Intelligence - Social Media</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Montvieux
+    </p>
+
+    <p class="search-result-excerpt">
+        Cloud hosted service offering advanced anticipatory analysis and dashboard, drawing upon machine learning and novel visualisation techniques. The service includes techniques providing a rich interface for showing early warning of emerging events within social media and other available data in real time. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud software
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/900036794885610">Azure Media Services - Content Protection</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Civica UK Limited
+    </p>
+
+    <p class="search-result-excerpt">
+        Deliver content securely using AES encryption or multi-DRM common encryption such as PlayReady and Widevine.  
+ Via Civica.   https:&#x2F;&#x2F;azure.microsoft.com&#x2F;en-us&#x2F;services&#x2F;media-services&#x2F; 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud hosting
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/160366314185065">Windows Server 2008 Upgrade and Migration</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Equiniti Plc
+    </p>
+
+    <p class="search-result-excerpt">
+        Windows Server 2008 extended support ended in July 2015.  After this time, Microsoft has offered no further patches, support or Hot Fixes for Windows 2008. Equiniti can assist your organisation in planning and implementing a migration to Windows Server 2012 &#x2F; R2. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud support
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/123530779283167">Parilitas Cloud Services</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Parilitas Ltd
+    </p>
+
+    <p class="search-result-excerpt">
+        Parilitas offer consultancy services to deliver a range of services designed to provide a cost effective means of implementing an array of cloud solutions. Common capabilities include consultancy supporting the most common platforms (such as Amazon Web Services, Microsoft Azure, Microsoft Office 365, or Oracle Fusion) including appropriate security measures. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud support
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/700229554894286">Quality Management</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        i3Works Ltd
+    </p>
+
+    <p class="search-result-excerpt">
+        i3Works’ Quality Management service is supported by a wealth of experience and provides a range of independent quality monitoring and customer focused services, designed to help your organisation deliver exceptional customer experience, improve employee engagement, and ensure robust compliance. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud software
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/853239228365880">Civica Civil Enforcement – Large</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Civica UK Limited
+    </p>
+
+    <p class="search-result-excerpt">
+        Large Civil Enforcement solution for sites receiving between 100,000 and 200,000 PCNs pa. It provides a comprehensive suite of integrated solutions designed to optimise efficiencies and reduce operational risk across the end-to-end PCN and permit management lifecycle. It streamlines local processes from parking and permits administration to digital CCTV-based enforcement. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud software
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/369346966623709">LIMA Storage as a Service</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        LIMA
+    </p>
+
+    <p class="search-result-excerpt">
+        Our Storage as a Service offering provides you with the ability to provision blob or block storage for use with applications, backup or disaster recovery. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud hosting
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/268054239943774">Assured IT Infrastructure Service</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Q Associates Limited
+    </p>
+
+    <p class="search-result-excerpt">
+        Q Associates provides the highly-disciplined operational management demanded by today’s agile businesses, and can enable higher-performing, more highly-available Converged Infrastructure platforms. Our experience ensures that the infrastructure is at its most available, and operating with optimal performance at all times. Enabling in-house I.T. staff to concentrate on more business activities. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud support
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/710983231522219">Microsoft Dynamics 365 Implementation and Training Services</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Innervate Technology Solutions Limited
+    </p>
+
+    <p class="search-result-excerpt">
+        Ciber UK has an extensive track record of implementing Dynamics 365 based solutions to both the public and private sector. A team of over 100 Microsoft accredited consultants and project managers deliver projects underpinned by Ciber’s ISO 9001: 2000 certified Project Management Methodology, using either waterfall or agile methods. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud support
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/411491275267342">Protocol Policy Systems (Hosted)</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Protocol Policy Systems Ltd.
+    </p>
+
+    <p class="search-result-excerpt">
+        Using International security standards or policy is the first step towards creating a secure electronic environment helping to define the rules and guidelines for managing, operating and using corporate information systems. The policies are provided in a user-friendly, web format that is easily deployed in any intranet&#x2F;internet environment. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud software
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/344474839209913">AvePoint Cloud Archive as a Service for Office 365</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        Bytes Software Services
+    </p>
+
+    <p class="search-result-excerpt">
+        Granularly set archiving and retention policies against Office 365 content. All delivered as a Service for Office 365.   bsscloud 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud software
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+<div class="search-result">
+  <h2 class="search-result-title">
+        <a href="/g-cloud/services/418061230575016">Self Managed Event Conference Calls from MeetingZone</a>
+    </h2>
+
+    <p class="search-result-supplier">
+        MeetingZone Ltd
+    </p>
+
+    <p class="search-result-excerpt">
+        Perfect for addressing large and not so large audiences without the need for travel. You run the call. We can set the call up so you can see pre-registered participants and send automatic reminders. You don’t need an operator, and you can run Q&amp;As whenever you like. 
+    </p>
+    <ul aria-label="tags" class="search-result-metadata">
+        <li class="search-result-metadata-item-inline">
+            Cloud software
+        </li>
+        <li class="search-result-metadata-item-inline">
+            G-Cloud 9
+        </li>
+    </ul>
+</div>
+
+  <nav role="navigation">
+    <ul class="previous-next-navigation">
+
+        
+
+        
+        <li class="next">
+            
+              <a href="/g-cloud/search?page=2">
+            
+                Next <span class="visuallyhidden">page</span>
+                <span class="page-numbers">2 of 193</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+</div>
+  </section>
+
+</div>
+
+    </main>
+  </div>
+<div class="report-a-problem-container">
+  <div class="report-a-problem-inner">
+    <div class="report-a-problem-content">
+      <h2>Help us improve the Digital Marketplace</h2>
+      <form autocomplete="off" action="/feedback" method="post">
+        <input type="hidden" name="csrf_token" value="IjQzN2Y4OGZmMGI2NjJkZjg3Yzk1MTQ0MzlmZDkzMzQ4Y2JkNDdmYjIi.Dc20Pg.1_oZpT2bmlYU52mWvefuSbKPelQ">
+        <input id="uri" name="uri" type="hidden" value="https://www.digitalmarketplace.service.gov.uk/g-cloud/search?q=">
+
+        <p>Please do not include personal details or sensitive information about your organisation or department.</p>
+
+        <label for="what_doing">What were you doing?</label>
+        <input autocomplete="off" id="what_doing" name="what_doing" type="text">
+
+        <label for="what_happened">What happened?</label>
+        <input autocomplete="off" id="what_happened" name="what_happened" type="text">
+
+        <div class="button-wrapper">
+          <button name="commit" type="submit" class="button">Send</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

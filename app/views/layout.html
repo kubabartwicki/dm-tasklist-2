@@ -1,0 +1,60 @@
+{% extends "govuk_template.html" %}
+
+{% block head %}
+  {% include "includes/head.html" %}
+{% endblock %}
+
+{% block cookie_message %}
+  <p>{{cookieText | safe }}</p>
+{% endblock %}
+{% block proposition_header %}
+<div class="header-title">
+    <a href="/" class="can-click">Digital Marketplace</a>
+</div>
+  <div class="header-proposition">
+    <div class="content">
+      <a href="#proposition-links" class="js-header-toggle menu">Menu</a>
+      <nav id="proposition-menu">
+        <ul id="proposition-links">
+          <li>
+            <a href="/guidance" class="can-click">Guidance</a>
+          </li>
+          <li>
+            <a href="https://www.digitalmarketplace.service.gov.uk/help" style="pointer-events:none">Help</a>
+          </li>
+          <li>
+            <a href="/login" class="can-click">Log in</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <style>
+  a.can-click {
+    pointer-events: auto !important;
+  }
+  </style>
+
+{% endblock %}
+
+{% block header_class %}
+  with-proposition
+{% endblock %}
+
+{% block footer_support_links %}
+  {% if useAutoStoreData %}
+    <ul>
+      <li>
+        <a href="/prototype-admin/clear-data">Clear data</a>
+      </li>
+    </ul>
+  {% endif %}
+{% endblock %}
+
+{% block body_end %}
+  {% block scripts %}
+    {% include "includes/scripts.html" %}
+    {% block page_scripts %}{% endblock %}
+  {% endblock %}
+  <!-- GOV.UK Prototype kit {{releaseVersion}} -->
+{% endblock %}
