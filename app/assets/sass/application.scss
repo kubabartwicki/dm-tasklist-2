@@ -673,10 +673,14 @@ margin: 0;
       .task-list-section-number {
         border-color: #0b0c0c;
       }
+      &:first-child {
+        padding-top: 0;
+      }
     }
     &:last-child {
       border-left-color: transparent;
     }
+
   }
 }
 
