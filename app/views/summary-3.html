@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block page_title %}
-  Your account (14)
+  Search summary
 {% endblock %}
 
 {% block content %}
@@ -16,34 +16,33 @@
 
 <main id="content" role="main">
 
-	<div class="grid-row">
-	    <div class="column-two-thirds">
-	      <h1 class="heading-xlarge" style="margin-bottom: 20px">
-	        Cloud hosting, software and support
-	      </h1>
-	      <p>Use the Digital Marketplace to search for cloud services, save details of your search and download your search results.</p>
-	      <!-- <a href="#" class="button">Search for services</a> -->
-	    </div>
-	</div>
+  <div class="grid-row">
+      <div class="column-two-thirds">
+        <h1 class="heading-large" style="margin-bottom: 20px">
+          Find cloud hosting, software and support
+        </h1>
+        <!-- <a href="#" class="button">Search for services</a> -->
+      </div>
+  </div>
 
     <div class="grid-row">
         <div class="column-two-thirds">
             
-            <ol class="task-list task-list--column task-list--lowercase task-list--transparent task-list--start-page task-list--short-margin" style="margin-left: -35px">
+            <ol class="task-list task-list--lowercase task-list--transparent task-list--start-page task-list--short-margin task-list--small-titles task-list--with-lines" style="margin-left: -35px">
               <li>
                 <h2 class="task-list-section">
                   <span class="task-list-section-number">1. </span> Search for services
                 </h2>
-                <p class="task-list-description">Choose a category, then search for services using keywords and filters.</p>
+                <p class="task-list-description">Choose a category, then search for services using keywords and filters. Your search terms should should be based on <a href="#">your requirements</a>.</p>
                 <ul class="task-list-items task-list-items--single-task">
-                	<li class="task-list-item">
-                	  <a class="task-name" href="#">
-                	    Search for cloud services
-                	  </a>
-                	</li>
+                  <li class="task-list-item">
+                    <a class="task-name" href="#">
+                      Search for cloud services
+                    </a>
+                  </li>
                 </ul>
               </li>
-              <li>
+              <li {% if data.step == '2' %}class="current-step"{% endif %}>
                 <h2 class="task-list-section">
                   <span class="task-list-section-number">2. </span> Save and edit your search terms
                 </h2>
@@ -53,66 +52,77 @@
 
                 </p>
                 <ul class="task-list-items task-list-items--single-task">
-                	<li class="task-list-item">
+                  <li class="task-list-item">
                     <p class="task-name">Search terms saved at 5:30pm on Monday 21 August 2017
                       <br/><a class="task-name" href="#">
                         View results and edit search terms
                       </a>
                     </p>
-                	</li>
+                  </li>
                 </ul>
               </li>
-              <li>
+              <li {% if data.step == '3' %}class="current-step"{% endif %}>
                 <h2 class="task-list-section">
                   <span class="task-list-section-number">3. </span> Download your search results
                 </h2>
                 <p class="task-list-description">When you’ve finished editing your search terms, download a spreadsheet of your results to help you review or compare services.</p>
                 <ul class="task-list-items task-list-items--single-task">
                   <li class="task-list-item">
+                    {% if data.step == '3' %}
                     <a class="task-name button" href="#">
-                      Download results
+                      Download your results
                     </a>
-                    <!-- <a href="#" class="button task-completed">Download results</a> -->
+                    {% endif %}
+                    {% if data.step == '4' or data.step == '5' or data.step == '6' %}
+                    <a class="task-name" href="#">
+                      Download results again
+                    </a>
+                    {% endif %}
                   </li>
                 </ul>
               </li>
-              <li>
+              <li {% if data.step == '4' %}class="current-step"{% endif %}>
                 <h2 class="task-list-section">
                   <span class="task-list-section-number">4. </span> Review services
                 </h2>
                 <p class="task-list-description"><a href="#">Review and compare services</a> to find the one that best meets your budget and requirements. <a href="#">You can contact the suppliers to ask questions</a>, but you must not negotiate with them about the details of their service.</p>
-                <ul class="task-list-items">
+                <ul class="task-list-items task-list-items--single-task">
+                  <li class="task-list-item">
+                    {% if data.step == '4' %}
+                    <a class="task-name button" href="#">
+                      I finished reviewing services
+                    </a>
+                    {% endif %}
+                  </li>
                 </ul>
               </li>
-              <li>
+              <li {% if data.step == '5' %}class="current-step"{% endif %}>
                 <h2 class="task-list-section">
                   <span class="task-list-section-number">5. </span> Award a contract
                 </h2>
-                <p class="task-list-description">When you have chosen the winning service, check <a href="#">how to award a contract</a>. The buyer and supplier must both sign a copy of the contract before the service can be used.</p>
-                <ul class="task-list-items">
+                <p class="task-list-description">When you have chosen the winning service, follow the guidance on <a href="#">how to award a contract</a>. You also need to <a href="#">publish the contract</a> and <a href="#">complete the Customer Benefits Record form</a>.</p>
+                <ul class="task-list-items task-list-items--single-task">
                   <li class="task-list-item">
-                    <a class="task-name" href="#">
-                      Download the G-Cloud 9 call-off contract
+                    {% if data.step == '5' %}
+                    <a class="task-name button" href="#">
+                      I finished awarding the contract
                     </a>
-                    <strong class="task-completed task-not-started">Can’t start yet</strong>
+                    {% endif %}
                   </li>
+                </ul>
+              </li>
+              <li {% if data.step == '6' %}class="current-step"{% endif %}>
+                <h2 class="task-list-section">
+                  <span class="task-list-section-number">6. </span> Tell us the outcome
+                </h2>
+                <p class="task-list-description">Tell us if you bought a service or not. Knowing the outcome of your saved search helps us to improve the Digital Marketplace.</p>
+                <ul class="task-list-items task-list-items--single-task">
                   <li class="task-list-item">
-                    <a class="task-name" href="#">
-                      Publish the contract
-                    </a>
-                    <strong class="task-completed task-not-started">Can’t start yet</strong>
-                  </li>
-                  <li class="task-list-item">
-                    <a class="task-name" href="#">
-                      Complete the Customer Benefits Record form
-                    </a>
-                    <strong class="task-completed task-not-started">Can’t start yet</strong>
-                  </li>
-                  <li class="task-list-item">
-                    <a class="task-name" href="#">
+                  {% if data.step == '6' %}
+                    <a class="task-name button" href="#">
                       Tell us the outcome
                     </a>
-                    <strong class="task-completed task-not-started">Can’t start yet</strong>
+                  {% endif %}
                   </li>
                 </ul>
               </li>

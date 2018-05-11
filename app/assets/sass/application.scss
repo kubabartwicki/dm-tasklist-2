@@ -45,7 +45,7 @@ $path: "/public/images/";
     text-transform: none;
     font-size: 14px;
     line-height: 1.14286;
-    background: url(/public/images/separator.png) 0% 50% no-repeat;
+    background: url(/public/images/separator.png) 0% 50% no-repeat !important;
     float: left;
     list-style: none;
     margin-right: 0.5em;
@@ -308,9 +308,11 @@ margin: 0;
 }
 
 /* prompt */
-.button-save-wrapper {
-  padding-top: 0;
-  margin: 0px 0px 20px;
+.page-heading .button-save-wrapper {
+  padding-top: 0 !important;
+  padding-left: 0 !important;
+  margin: 0px 0px 20px !important;
+  border: none !important;
   &:after {
     content: "";
     display: block;
@@ -320,7 +322,7 @@ margin: 0;
 .button-save-wrapper * {
   box-sizing: border-box;
 }
-.button-save-wrapper .save-summary-text {
+.page-heading .button-save-wrapper .save-summary-text {
   font-family: "nta",Arial,sans-serif;
   font-weight: 400;
   text-transform: none;
@@ -328,20 +330,38 @@ margin: 0;
   line-height: 1.14286;
   padding: 7px 0;
 }
-.button-save-wrapper .button {
+.page-heading .button-save-wrapper .button {
   margin: 0 0 25px 0;
 }
 @media (min-width: 641px) {
-  .button-save-wrapper .save-button .button {
+  .page-heading .button-save-wrapper .save-button .button {
     font-size: 16px;
     line-height: 1.25;
     margin-right: 20px;
     float: left;
   }
-  .button-save-wrapper .save-summary-text {
+  .page-heading .button-save-wrapper .save-button.save-button--big {
+    .button {
+      font-size: inherit;
+      line-height: inherit;
+    }
+    + .save-summary-text {
+      padding-top: 10px;
+    }
+  }
+  .page-heading .search-summary-count--big {
+    font-size: 30px;
+    margin-right: 2px;
+    font-weight: bold;
+  }
+  .page-heading .button-save-wrapper .save-summary-text {
     font-size: 16px;
     line-height: 1.25;
   }
+}
+.page-heading p.search-summary {
+  font-size: inherit;
+  line-height: inherit;
 }
 
 /* really no clue why this margin is originally 60px - too big */
@@ -557,6 +577,9 @@ margin: 0;
   &.current-step {
     position: relative;
     z-index: 1;
+    &:first-child {
+      padding-top: 20px;
+    }
     &:after {
       height: 100%;
       background: #F8F8F8;
@@ -606,4 +629,64 @@ margin: 0;
   .header-global .header-logo {
     width: auto !important;
   }
+}
+
+/* end to end */
+.task-list--end-to-end {
+  .task-list-section {
+    display: block;
+  }
+  .task-list-section-number {
+    border-radius: 100%;
+    border: 3px solid #bfc1c3;
+    text-align: center;
+    position: relative;
+    line-height: 29px;
+    box-sizing: border-box;
+    width: 33px;
+    height: 33px;
+    left: -18px;
+    background: #fff;
+    display: block;
+    margin-top: -5px;
+    float: left;
+    margin-right: -8px;
+    background: white;
+    position: relative;
+    z-index: 1;
+  }
+  > li {
+    border-left: 2px solid #bfc1c3; 
+    padding-bottom: 40px;
+    &:before {
+      margin: 0;
+      height: 0;  
+    }
+    .task-list-items {
+      margin-bottom: 0 !important;
+      padding-bottom: 0;
+    }
+    &.current-step {
+      // background: #F8F8F8;
+      &:after { display: none; }
+      border-left-color: #0b0c0c;
+      .task-list-section-number {
+        border-color: #0b0c0c;
+      }
+    }
+    &:last-child {
+      border-left-color: transparent;
+    }
+  }
+}
+
+/* search icon */
+.govuk-option-select.filter-field-text input.submit {
+  background-image: url(/public/images/search-button.png) !important;
+}
+.js-enabled .govuk-option-select.js-collapsible button {
+  background-image: url("/public/images/option-select-toggle-sprite.png") !important;
+}
+a.can-click, input[type="submit"].can-click, button.can-click {
+  pointer-events: auto !important;
 }
