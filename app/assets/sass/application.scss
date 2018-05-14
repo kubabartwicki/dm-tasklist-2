@@ -541,6 +541,7 @@ margin: 0;
     min-width: 25px;
   }
 }
+.task-list--with-numbers .task-list-section-number:after { content: "."}
 @media (min-width: 641px) {
   .task-list--small-titles {
     .task-list-description, .task-list-items {

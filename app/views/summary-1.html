@@ -29,34 +29,38 @@
     <div class="grid-row">
         <div class="column-two-thirds">
             
-            <ol class="task-list task-list--lowercase task-list--transparent task-list--start-page task-list--short-margin task-list--small-titles task-list--with-lines" style="margin-left: -35px">
-              <li {% if data.step == '1' or data.step == '0' %}class="current-step"{% endif %}>
+            <ol class="task-list task-list--lowercase task-list--transparent task-list--start-page task-list--short-margin task-list--small-titles task-list--with-lines task-list--with-numbers" style="margin-left: -35px">
+              <li {% if data.step == '1' %}class="current-step"{% endif %}>
                 <h2 class="task-list-section">
-                  <span class="task-list-section-number">1. </span> Search for cloud services
+                  <span class="task-list-section-number">1</span> Save a search
                 </h2>
-                <p class="task-list-description">Choose a category, then search for services using keywords and filters. Save your search terms so you can edit them later. Your search terms should be based on <a href="/guidance#requirements">your requirements</a>.</p>
+                <p class="task-list-description">Choose search terms based on <a href="/guidance#requirements">your requirements</a>. Save your search to keep a record of the category, keywords and filters you used. You must assess all the services that meet your search terms. If you have more than 30 services, edit your search terms to refine your results.</p>
+                {% if data.step and data.step != '0' %}
                 <p class="search-summary task-list-description task-list-description--small">
-                  <span class="search-summary-count">{% if data.step == '0' %}80{% else %}34{% endif %}</span> services found in <strong>Software as a Service</strong>, under the categories <strong>Accounting and finance</strong> and <strong>Collaboration</strong>, with a minimum contract period of an <strong>Hour</strong> or a <strong>Day</strong>
-
+                  <span class="search-summary-count">{% if data.step == '1' %}80{% else %}6{% endif %}</span> services found in <strong>Software as a Service</strong>, under the categories <strong>Accounting and finance</strong> and <strong>Collaboration</strong>, with a minimum contract period of an <strong>Hour</strong> or a <strong>Day</strong>
                 </p>
+                {% endif %}
                 <ul class="task-list-items task-list-items--single-task">
                   <li class="task-list-item">
-                    {% if data.step == '0' %}
-                      <p class="task-name" style="margin-top: 0;">Search terms saved at 5:30pm on Monday 21 August 2017. <br/>You need less than 50 results to be able to finish searching.</p>
-                    {% else %} 
-                      <p class="task-name" style="margin-top: 0;">Search terms saved at 5:30pm on Monday 21 August 2017</p>
+                    {% if data.step and data.step != '0' %}
+                    <p class="task-name" style="margin-top: 0;">Search terms saved at 5:30pm on Monday 21 August 2017.</p>
                     {% endif %}
                     {% if data.step == '1' %}
                       <a class="task-name button" href="?step=2" style="margin-top: 10px">
-                        I finished my search
-                      </a><hr style="background: transparent;display:block;width:100%;margin:0;"></hr>
-                      <a class="task-name" href="?step=1" style="margin-top: 5px;">
+                        View results and edit search terms
+                      </a>
+                    {% endif %}
+                    {% if data.step == '2' %}
+                      <a class="task-name" href="?step=2" style="margin-top: 10px">
                         View results and edit search terms
                       </a>
                     {% endif %}
                     {% if data.step == '0' %}
                       <a class="task-name button" href="?step=1" style="margin-top: 10px;">
-                        View results and edit search terms
+                        Start a new search
+                      </a><hr style="background: transparent;display:block;width:100%;margin:0;"></hr>
+                      <a class="task-name" href="?step=1" style="margin-top: 5px;">
+                        See a list of your saved searches
                       </a>
                     {% endif %}
                   </li>
@@ -64,9 +68,9 @@
               </li>
               <li {% if data.step == '2' %}class="current-step"{% endif %}>
                 <h2 class="task-list-section">
-                  <span class="task-list-section-number">2. </span> Download your search results
+                  <span class="task-list-section-number">2</span> Download your results
                 </h2>
-                <p class="task-list-description">When you’ve finished editing your search terms, download a spreadsheet of your results to help you review or compare services.</p>
+                <p class="task-list-description">When you’ve finished editing your search terms, you can download a copy of your results. You can add the document to your audit trail or use it to help you track and record your decision-making.</p>
                 <ul class="task-list-items task-list-items--single-task">
                   <li class="task-list-item">
                     {% if data.step == '2' %}
@@ -74,9 +78,12 @@
                       Download your results
                     </a>
                     {% endif %}
+                    {% if data.step =='1' %}
+                      <p><strong>You still have too many results. Try editing your search terms.</strong></p>
+                    {% endif %}
                     {% if data.step == '3' or data.step == '4' or data.step == '5' %}
                     <a class="task-name" href="#">
-                      Download results again
+                      Download your results
                     </a>
                     {% endif %}
                   </li>
@@ -84,14 +91,14 @@
               </li>
               <li {% if data.step == '3' %}class="current-step"{% endif %}>
                 <h2 class="task-list-section">
-                  <span class="task-list-section-number">3. </span> Review services
+                  <span class="task-list-section-number">3</span> Review services
                 </h2>
-                <p class="task-list-description"><a href="#">Review and compare services</a> to find the one that best meets your budget and requirements. <a href="#">You can contact the suppliers to ask questions</a>, but you must not negotiate with them about the details of their service.</p>
+                <p class="task-list-description"><a href="#">Compare the services you found</a> to find the one that best meets your budget and requirements. <a href="#">You can contact the suppliers to ask questions</a>, but you must not negotiate with them about the details of their service.</p>
                 <ul class="task-list-items task-list-items--single-task">
                   <li class="task-list-item">
                     {% if data.step == '3' %}
                     <a class="task-name button" href="?step=4">
-                      I finished reviewing services
+                      I have reviewed my search results
                     </a>
                     {% endif %}
                   </li>
@@ -99,14 +106,14 @@
               </li>
               <li {% if data.step == '4' %}class="current-step"{% endif %}>
                 <h2 class="task-list-section">
-                  <span class="task-list-section-number">4. </span> Award a contract
+                  <span class="task-list-section-number">4</span> Award a contract
                 </h2>
-                <p class="task-list-description">When you have chosen the winning service, follow the guidance on <a href="#">how to award a contract</a>. You also need to <a href="#">publish the contract</a> and <a href="#">complete the Customer Benefits Record form</a>.</p>
+                <p class="task-list-description">When you have chosen the winning service, follow the guidance on <a href="#">how to award a contract</a>. Check whether you need to <a href="#">publish the contract on Contracts Finder</a>.</p>
                 <ul class="task-list-items task-list-items--single-task">
                   <li class="task-list-item">
                     {% if data.step == '4' %}
                     <a class="task-name button" href="?step=5">
-                      I finished awarding the contract
+                      I have awarded the contract
                     </a>
                     {% endif %}
                   </li>
@@ -114,14 +121,14 @@
               </li>
               <li {% if data.step == '5' %}class="current-step"{% endif %}>
                 <h2 class="task-list-section">
-                  <span class="task-list-section-number">5. </span> Tell us the outcome
+                  <span class="task-list-section-number">5</span> Declare the outcome
                 </h2>
-                <p class="task-list-description">Tell us if you bought a service or not. Knowing the outcome of your saved search helps us to improve the Digital Marketplace.</p>
+                <p class="task-list-description">Tell us if you bought a service or not. Knowing the outcome of your saved search helps us to improve the Digital Marketplace. You also need to <a href="#">complete the Customer Benefits Record form</a>.</p>
                 <ul class="task-list-items task-list-items--single-task">
                   <li class="task-list-item">
                   {% if data.step == '5' %}
-                    <a class="task-name button" href="#">
-                      Tell us the outcome
+                    <a class="task-name button" href="?step=0">
+                      Declare the outcome
                     </a>
                   {% endif %}
                   </li>
