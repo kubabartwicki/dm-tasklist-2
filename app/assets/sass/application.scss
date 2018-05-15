@@ -344,6 +344,8 @@ margin: 0;
     .button {
       font-size: inherit;
       line-height: inherit;
+      position: relative;
+      z-index: 1;
     }
     + .save-summary-text {
       padding-top: 10px;
@@ -722,5 +724,37 @@ a.can-click, input[type="submit"].can-click, button.can-click {
     font-weight: bold;
     font-size: 19px;
     padding-right: 1px;
+  }
+}
+
+.button-save-wrapper--2-lines .save-summary-text {
+  max-width: 640px;
+  position: relative;
+  top: -7px;
+}
+
+.js-enabled .govuk-option-select.filter-field-text--search {
+  // background: none;
+  // padding: 0 !important;
+  .container-head {
+    position: relative;
+  }
+  .search-help-link {
+    font-size: 16px;
+    position: absolute;
+    right: 3px;
+    top: 6px;
+  }
+  .container-hidden p {
+    font-size: 16px;
+    line-height: 1.25;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    &:first-child {
+      margin-top:10px;
+    }
+    &:last-child { 
+      margin-bottom: 10px;
+    }
   }
 }

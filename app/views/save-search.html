@@ -17,7 +17,7 @@
     <ol class="group" role="breadcrumbs">
         <li><a href="/" class="can-click">Digital Marketplace</a></li>
         <li><a href="/search">Search</a></li>
-        <li>Choose where to save your search</li>
+        <li>Save your category, keywords and filters</li>
     </ol>
   </nav>
 </div>
@@ -39,12 +39,12 @@
        <div class="column-two-thirds">
          <header class="page-heading-smaller page-heading-without-breadcrumb">
            <h1>
-             Choose where to save your search
+             Save your category, keywords and filters
            </h1>
          </header>
        </div>
      </div>
-     <form method="post" action="/summary-1?step=1">
+     <form method="post" action="{{ action }}">
        <div class="grid-row">
          <div class="column-two-thirds">
            <div class="search-summary-panel panel panel-border-wide">
@@ -69,7 +69,7 @@
 
               <div class="multiple-choice" data-target="new-search">
                 <input type="radio" name="save_search_selection" value="new_search" id="project-new" aria-required="true" checked="checked" aria-controls="new-search" aria-expanded="true">
-                <label for="project-new">Create a new saved search</label>
+                <label for="project-new">Save a new set of search terms</label>
               </div>
               <div class="panel panel-border-narrow" id="new-search" aria-hidden="false">
                 
@@ -79,6 +79,17 @@
                     <p>Name your saved search. A reference number or short description of what you want to buy makes a good name.</p>
                     <p class="hint">
                       100 characters maximum
+                    </p>
+                    
+                    <input class="text-box" id="project_name" name="name" type="text" value="">
+                  </div>
+                </div>
+                <div style="margin-top: 40px;">
+                  <div class="question" id="name">
+                    <label class="question-heading" for="project_name">Name your search</label>
+                    <p>Organisation the service is for</p>
+                    <p class="hint">
+                      For example, National Audit Office or Lewisham Council
                     </p>
                     
                     <input class="text-box" id="project_name" name="name" type="text" value="">

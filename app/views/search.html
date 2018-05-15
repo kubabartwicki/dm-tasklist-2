@@ -39,16 +39,16 @@
             Refine your search to less than a 100 results to save it.
             </div>
           </div> -->
-          <div class="button-save-wrapper">
+          <div class="button-save-wrapper button-save-wrapper--2-lines">
             <div class="save-button save-button--big">
-              <form action="/login">
+              <form action="{{ action }}">
               <button id="save-search" class="can-click button button--submit" role="button" type="submit" data-analytics="trackEvent" data-analytics-category="Direct Award" data-analytics-action="Save search" data-analytics-label="19248">
-                Save search
+                Save your search terms
               </button>
             </form>
             </div>
             <div class="save-summary-text">
-              Save details of your search and download your search results.
+              Save your search to keep a record of the terms you used. You can edit them again later or download your results.
             </div>
           </div>
 
@@ -57,12 +57,24 @@
   <form action="/g-cloud/search" method="get" id="js-dm-live-search-form">
     <section class="column-one-third search-page-filters" aria-label="Search filters">
           
-  <div class="govuk-option-select filter-field-text">
+  <div class="govuk-option-select filter-field-text filter-field-text--search">
   <div class="container-head">
     <label class="option-select-label" for="keywords">
       Keyword search
     </label>
+    <a id="dm-search-help-link" class="search-help-link can-click" href="/g-cloud/search?q=" role="button">Help</a>
   </div>
+  <div class="container-hidden hidden" id="container-hidden">
+    <p>Add keywords until the results meet all your requirements.</p>
+    <p>Put a ‘-’ before a word to exclude it.</p>
+    <p>Use double quote marks to find services that match an exact phrase.</p>
+  </div>
+  <script>
+    document.getElementById('dm-search-help-link').addEventListener('click', function(e) {
+      e.preventDefault();
+      document.getElementById('container-hidden').classList.toggle('hidden');
+    });
+  </script>
   <div class="container-search">
     <input type="search" name="q" id="keywords" value="" maxlength="200">
     <input class="submit" type="submit" value="Search">
