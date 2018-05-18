@@ -21,6 +21,12 @@
   </nav>
 </div>
 
+<style>
+.task-list-description a {
+  pointer-events: none;
+}
+</style>
+
 <main id="content" role="main">
 
   <div class="grid-row">
@@ -65,7 +71,7 @@
                       <a class="task-name button" href="/search-2" style="margin-top: 10px;">
                         Start a new search
                       </a><hr style="background: transparent;display:block;width:100%;margin:0;"></hr>
-                      <a class="task-name" href="?step=1" style="margin-top: 5px;">
+                      <a class="task-name" href="?step=1" style="margin-top: 5px; pointer-events: none;">
                         See a list of your saved search terms
                       </a>
                     {% endif %}
@@ -89,7 +95,7 @@
                     {% endif %}
                     {% if data.step == '3' or data.step == '4' or data.step == '5' %}
                     <p class="task-name" style="margin-top: 5px;margin-left:0;margin-bottom: 10px;">Search results saved at 2:45pm on Tuesday 22 August 2017</p>
-                    <a class="task-name" href="/download-2">
+                    <a class="task-name" href="/download-2?flash=0">
                       Download your results again
                     </a>
                     {% endif %}

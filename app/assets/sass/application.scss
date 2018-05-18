@@ -778,3 +778,38 @@ a.can-click, input[type="submit"].can-click, button.can-click {
   border-bottom: 6px solid #005ea5;
   border-top: none;
 }
+
+/* should have thought of this sooner */
+.task-list--no-indent {
+  margin-left: 0 !important;
+  .task-list-description {
+    margin-left: 0;
+  }
+  p.task-list-description {
+    padding-left: 0;
+    &.search-summary {
+      padding-left: 15px;
+    }
+  }
+  .task-list-items {
+    padding-left: 0;
+  }
+  &.task-list--with-lines > li {
+    &:before {
+      margin-left: 0;
+    }
+    &.current-step + li:before,
+    &.current-step:before {
+     margin-left: -20px; 
+     margin-right: -20px;
+    }
+    &.current-step:after {
+      margin-left: -20px;
+      width: calc(100% + 40px);
+    }
+  }
+  .task-list-section-number {
+    min-width: 0;
+    padding-right: 5px;
+  }
+}
