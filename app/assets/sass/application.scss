@@ -346,6 +346,7 @@ margin: 0;
       line-height: inherit;
       position: relative;
       z-index: 1;
+      margin-bottom: 0;
     }
     + .save-summary-text {
       padding-top: 10px;
@@ -757,4 +758,23 @@ a.can-click, input[type="submit"].can-click, button.can-click {
       margin-bottom: 10px;
     }
   }
+}
+
+#triangle {
+  display: block;
+  width: 0;
+  height: 0;
+  line-height: 0px;
+  float: right;
+  position: relative;
+  top: 7px;
+  margin-left: 4px;
+  border-bottom: none;
+  border-top: 6px solid #005ea5;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+}
+.help-is-showing #triangle {
+  border-bottom: 6px solid #005ea5;
+  border-top: none;
 }

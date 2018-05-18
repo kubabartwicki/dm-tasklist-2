@@ -29,7 +29,7 @@
 
       
 <header class="page-heading">
-        <h1 style="margin-bottom: 20px">Search results</h1>
+        <h1 style="margin-bottom: 10px">Search results</h1>
         <p class="search-summary">
             <span class="search-summary-count search-summary-count--big">73</span> results found in <em>Cloud software</em> in the category <em>Electronic document and records management (EDRM)</em>, where the supplier is a <em>reseller providing extra features and support</em> and where user support is available through <em>web chat</em>
           </p>
@@ -59,7 +59,11 @@
     <label class="option-select-label" for="keywords">
       Keyword search
     </label>
-    <a id="dm-search-help-link" class="search-help-link can-click" href="/g-cloud/search?q=" role="button">Help</a>
+    <a id="dm-search-help-link" class="search-help-link can-click" href="/g-cloud/search?q=" role="button">
+      Help
+      <span id="triangle"></span>
+
+    </a>
   </div>
   <div class="container-hidden hidden" id="container-hidden">
     <p>Add keywords until the results meet all your requirements.</p>
@@ -70,6 +74,7 @@
     document.getElementById('dm-search-help-link').addEventListener('click', function(e) {
       e.preventDefault();
       document.getElementById('container-hidden').classList.toggle('hidden');
+      document.getElementById('dm-search-help-link').classList.toggle('help-is-showing');
     });
   </script>
   <div class="container-search">
