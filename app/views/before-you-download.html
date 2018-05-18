@@ -48,13 +48,13 @@
      <form method="post" action="{{ action }}">
        <div class="grid-row">
          <div class="column-two-thirds">
-          <p>Do not save and continue if you still need to edit your search terms.</p>
-          <p style="margin-top:10px">You will not be able to change your keywords, category and filters again later.</p>
-          <p style="margin-top:10px">Results include service descriptions, pricing and contact information. You can download them as a spreadsheet or as comma-separated values (CSV).</p>
+          <p>Do not continue if you still need to edit your search terms.</p>
+          <p style="margin-top:10px">You should only download your results when you’re ready to assess the services you’ve found.</p>
+          <p style="margin-top:10px">Search results are available as a spreadsheet or as comma-separated values (CSV). Both file types include service descriptions, pricing and supplier contact information.</p>
 
            <input type="hidden" name="csrf_token" value="IjZjM2Q5NWQxZWNjZGJkMTBkMGEwMWZlZDkwZTBhYzgzNWQ0MjdjM2Ei.Ddbsiw.mboTVb8Kv0H751EGNTKGmcV4PDM">
            <input type="hidden" name="search_query" value="serviceCategories=electronic+document+and+records+management+%28edrm%29&amp;resellingType=reseller_extra_features_and_support&amp;webChatSupport=yes&amp;lot=cloud-software">
-           <input type="submit" class="can-click button-save" name="return_to_overview" value="Save results and continue" style="margin-top: 20px">
+           <input type="submit" class="can-click button-save" name="return_to_overview" value="Continue" style="margin-top: 20px">
 
            <p class="return-to-overview">
              <a href="{{ previousStep }}" class="can-click">Return to overview</a>

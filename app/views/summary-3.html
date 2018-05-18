@@ -44,12 +44,11 @@
                 <h2 class="task-list-section">
                   <span class="task-list-section-number">1</span> Save a search
                 </h2>
-                <p class="task-list-description">Choose search terms based on <a href="/guidance#requirements">your requirements</a>. Save your search to keep a record of the category, keywords and filters you used. You must assess all the services that meet your search terms.</p>
+                <p class="task-list-description">Choose search terms based on your <a href="/guidance#requirements">requirements</a>. Save your search to keep a record of the category, keywords and filters you used. You must assess all the services that meet your search terms.</p>
                 {% if data.step and data.step != '0' %}
                 <p class="search-summary task-list-description task-list-description--toolkit task-list-description--small">
                   <span class="search-summary-count">{% if data.step == '1' %}80{% else %}6{% endif %}</span> services found in <strong>Software as a Service</strong>, under the categories <strong>Accounting and finance</strong> and <strong>Collaboration</strong>, with a minimum contract period of an <strong>Hour</strong> or a <strong>Day</strong>
                 </p>
-                <p class="task-name" style="margin-top: 0;margin-left:25px;margin-bottom: 2px;">Search terms saved at 5:30pm on Monday 21 August 2017</span>
                 {% endif %}
                 <ul class="task-list-items task-list-items--single-task">
                   <li class="task-list-item">
@@ -68,7 +67,7 @@
                         Start a new search
                       </a><hr style="background: transparent;display:block;width:100%;margin:0;"></hr>
                       <a class="task-name" href="?step=1" style="margin-top: 5px;">
-                        See a list of your saved searches
+                        See a list of your saved search terms
                       </a>
                     {% endif %}
                   </li>
@@ -78,16 +77,16 @@
                 <h2 class="task-list-section">
                   <span class="task-list-section-number">2</span> Download your results
                 </h2>
-                <p class="task-list-description">When you’ve finished editing your search terms, you can save and download a copy of your results. Add your results to your audit trail or use them to help you track and record your decision-making.</p>
+                <p class="task-list-description">Download a copy of your results when you’re ready to assess the services you've found. Add them to your audit trail or use them to help you review services.</p>
                 <ul class="task-list-items task-list-items--single-task">
                   <li class="task-list-item">
                     {% if data.step == '2' %}
                     <a class="task-name button" href="/before-you-download-3">
-                      Save and download your results
+                      Download your results
                     </a>
                     {% endif %}
                     {% if data.step =='1' %}
-                      <p class="browse-list-item-status-angry"><strong>You have more than 30 services to review. Edit your search terms to refine your results.</strong></p>
+                      <p class="browse-list-item-status-angry"><strong>You have more than 30 services to review. Choose a category or add filters to refine your search.</strong></p>
                     {% endif %}
                     {% if data.step == '3' or data.step == '4' or data.step == '5' %}
                     <p class="task-name" style="margin-top: 5px;margin-left:0;margin-bottom: 10px;">Search results saved at 2:45pm on Tuesday 22 August 2017</p>
