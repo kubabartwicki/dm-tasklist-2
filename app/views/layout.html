@@ -4,6 +4,8 @@
   {% include "includes/head.html" %}
 {% endblock %}
 
+{% set logged_in = logged_in | default(false) %}
+
 {% block cookie_message %}
   <p>{{cookieText | safe }}</p>
 {% endblock %}
@@ -22,9 +24,18 @@
           <li>
             <a href="https://www.digitalmarketplace.service.gov.uk/help" style="pointer-events:none">Help</a>
           </li>
-          <li>
-            <a href="/login" style="pointer-events:none">Log in</a>
-          </li>
+          {% if logged_in == true %}
+            <li>
+              <a href="https://www.digitalmarketplace.service.gov.uk/help" style="pointer-events:none">View your account</a>
+            </li>
+            <li>
+              <a href="/login" style="pointer-events:none">Log out</a>
+            </li>
+          {% else %}
+            <li>
+              <a href="/login" style="pointer-events:none">Log in</a>
+            </li>
+          {% endif %}
         </ul>
       </nav>
     </div>

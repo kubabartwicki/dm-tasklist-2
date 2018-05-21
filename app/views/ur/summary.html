@@ -1,6 +1,7 @@
-
 {% extends "layout.html" %}
-
+{% if data.step == '1' or data.step == '2' or data.step == '3' or data.step == '4' or data.step == '5' %}
+  {% set logged_in = true %}
+{% endif %}
 {% block page_title %}
   Search summary (1)
 {% endblock %}

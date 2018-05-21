@@ -1,5 +1,7 @@
 {% extends "layout.html" %}
-
+{% if data.canrefine==1 %}
+  {% set logged_in = true %}
+{% endif %}
 {% block page_title %}
   Search – Digital Marketplace
 {% endblock %}
