@@ -813,3 +813,28 @@ a.can-click, input[type="submit"].can-click, button.can-click {
     padding-right: 5px;
   }
 }
+
+.browse-list-item-subtext {
+  font-size: 16px;
+  line-height: 1.25;
+  margin: 0;
+  font-family: "nta",Arial,sans-serif;
+  font-weight: 400;
+  text-transform: none;
+  padding-top: 8px;
+  padding-bottom: 7px;
+  color: #6f777b;
+}
+.multiple-choice label p {
+  margin-bottom: 0;
+  &.bold {
+    margin-top: 0;
+  }
+}
+.multiple-choice label ul {
+  margin-top: 5px;
+  margin-left: 20px;
+}
+.multiple-choice label li {
+  list-style-type: disc;
+}
