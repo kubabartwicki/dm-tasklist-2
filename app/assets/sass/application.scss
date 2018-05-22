@@ -801,11 +801,15 @@ a.can-click, input[type="submit"].can-click, button.can-click {
     &.current-step + li:before,
     &.current-step:before {
      margin-left: -20px; 
-     margin-right: -20px;
+
+    }
+    &.current-step .task-list-description,
+    &.current-step .task-list-section {
+      padding-right: 20px;
     }
     &.current-step:after {
       margin-left: -20px;
-      width: calc(100% + 40px);
+      width: calc(100% + 20px);
     }
   }
   .task-list-section-number {
